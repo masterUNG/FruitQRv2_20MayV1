@@ -97,32 +97,32 @@
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
 
-            <TextView
-                android:layout_marginLeft="20dp"
-                android:textSize="22dp"
-                android:text="ประเภทผู้ใช้งาน :"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:fontFamily="@font/fonts1"/>
+            <!--<TextView-->
+                <!--android:layout_marginLeft="20dp"-->
+                <!--android:textSize="22dp"-->
+                <!--android:text="ประเภทผู้ใช้งาน :"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:fontFamily="@font/fonts1"/>-->
 
-            <TextView
-                android:layout_marginLeft="130dp"
-                android:textSize="22dp"
-                android:id="@+id/txtType"
-                android:text="Type"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:fontFamily="@font/fonts1"/>
-
-
-        </RelativeLayout>
+            <!--<TextView-->
+                <!--android:layout_marginLeft="130dp"-->
+                <!--android:textSize="22dp"-->
+                <!--android:id="@+id/txtType"-->
+                <!--android:text="Type"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:fontFamily="@font/fonts1"/>-->
 
 
-        <!--Line ทำเส้น-->
+        <!--</RelativeLayout>-->
+
+
+        <!--&lt;!&ndash;Line ทำเส้น&ndash;&gt;-->
         <!--<View-->
             <!--android:layout_marginTop="10dp"-->
             <!--android:background="#CEC8C8"-->

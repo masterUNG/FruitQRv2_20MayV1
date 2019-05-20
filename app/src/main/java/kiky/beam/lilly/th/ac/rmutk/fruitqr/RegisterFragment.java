@@ -95,8 +95,9 @@ public class RegisterFragment extends Fragment {
         EditText phoneEditText = getView().findViewById(R.id.editPhone);
         EditText userEditText = getView().findViewById(R.id.editUser);
         EditText passwordEditText = getView().findViewById(R.id.editPassword);
+        EditText addcontactEditText = getView().findViewById(R.id.editaddcontact);
 
-        String nameShop = namsShopEditText.getText().toString().toString();
+        String nameShop = namsShopEditText.getText().toString().trim();
 
         String name = nameEditText.getText().toString().trim(); //แปลงค่าText ให้เป็น String , trim ลบค่าที่เว้นวรรคอัตโนวัติ
         String surname = surnameEditText.getText().toString().trim();
@@ -104,16 +105,18 @@ public class RegisterFragment extends Fragment {
         String phone = phoneEditText.getText().toString().trim();
         String user = userEditText.getText().toString().trim();
         String password = passwordEditText.getText().toString().trim();
+        String addcontact = addcontactEditText.getText().toString().trim();
+
 
         MyAlertDialog myAlertDialog = new MyAlertDialog(getActivity()); //การสร้างออปเจ็ค
 //        check Spqce  การหาช่องว่าง
-        if (nameShop.isEmpty()|| name.isEmpty()|| surname.isEmpty() || address.isEmpty() || phone.isEmpty() || user.isEmpty() || password.isEmpty()) {//isEmpty ถ้าไม่มีการกรอกเป็น true
+        if (nameShop.isEmpty()|| name.isEmpty()|| surname.isEmpty() || address.isEmpty() || phone.isEmpty() || user.isEmpty() || password.isEmpty()|| addcontact.isEmpty()) {//isEmpty ถ้าไม่มีการกรอกเป็น true
 
 //            Have Space
-            myAlertDialog.normalDialog("Have Space", "Please Fill Every Blank");
+            myAlertDialog.normalDialog("กรอกข้อมูลให้ครบ", "กรุณากรอกข้อมูลให้ครบถ้วน");
         } else if (aBoolean){
 //            Non Choose
-            myAlertDialog.normalDialog("Non Choose Type User", "Please Choose Type User");
+            myAlertDialog.normalDialog("เลือกสถานะผู้ใช้งาน", "กรุณาเลือกสถานะผู้ใช้งาน");
         }else{
 
 //            Upload to Server
@@ -121,7 +124,7 @@ public class RegisterFragment extends Fragment {
 
                 Myconstant myconstant = new Myconstant();
                 AddUserThread addUserThread = new AddUserThread(getActivity());
-                addUserThread.execute(nameShop,name,surname,address,phone,user,password,typeString,myconstant.getUrlAddUser());
+                addUserThread.execute(nameShop,name,surname,address,phone,user,password,addcontact,typeString,myconstant.getUrlAddUser());
 
                 String result = addUserThread.get();
                 Log.d("27AprilV1", "result ==> " + result);
@@ -132,7 +135,7 @@ public class RegisterFragment extends Fragment {
                             .replace(R.id.contentServiceFragment, new ShowListMemberFragment())
                             .commit();   //พอทำงานเสร็จให้ไปหน้า ShowListMemberFragment
                 }else{
-                    myAlertDialog.normalDialog("Cannot Upload","Please Try Again");
+                    myAlertDialog.normalDialog("ไม่สามารถบันทึกข้อมูลได้","กรุณาลองอีกครั้ง");
                 }
 
 

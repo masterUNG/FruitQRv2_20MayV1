@@ -159,12 +159,12 @@ public class ShowProductFragment extends Fragment {
 //            fruitunitTextView.setText(framerStringArrayList.get(4));
 
 //          Date Fruit
-            TextView fruitdateTextView = getView().findViewById(R.id.txtFruitdate);
-            fruitdateTextView.setText(framerStringArrayList.get(5));
+//            TextView fruitdateTextView = getView().findViewById(R.id.txtFruitdate);
+//            fruitdateTextView.setText(framerStringArrayList.get(5));
 
 //          Name Fruit
-            TextView fruitnameTextView = getView().findViewById(R.id.txtProductName);
-            fruitnameTextView.setText(userStringArrayList.get(1));
+//            TextView fruitnameTextView = getView().findViewById(R.id.txtProductName);
+//            fruitnameTextView.setText(userStringArrayList.get(1));
 
 //          Address Fruit
 //            TextView fruitaddressTextView = getView().findViewById(R.id.txtProductAdd);

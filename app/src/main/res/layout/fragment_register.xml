@@ -77,6 +77,16 @@
                     app:fontFamily="@font/fonts1"
                     android:textSize="25dp"/>
 
+                <!--addcontact-->
+                <EditText
+                    android:id="@+id/editaddcontact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="เพิ่มช่องทางการติดต่อ : เช่น Line,Facebook"
+                    android:inputType="text"
+                    app:fontFamily="@font/fonts1"
+                    android:textSize="25dp"/>
+
                 <!--User-->
                 <EditText
                     android:id="@+id/editUser"
@@ -96,6 +106,8 @@
                     android:inputType="text"
                     app:fontFamily="@font/fonts1"
                     android:textSize="25dp"/>
+
+
 
                 <!--Group User-->
                 <TextView

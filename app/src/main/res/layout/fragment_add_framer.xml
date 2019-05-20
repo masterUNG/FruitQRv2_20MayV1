@@ -7,31 +7,42 @@
     tools:context=".AddFramerFragment">
 
     <LinearLayout
-        android:background="@color/colorPrimaryeiei"
+
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:textColor="#FFFFFF"
-            android:gravity="center"
-            android:textSize="33dp"
-            android:text="รายการผลผลิต"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:fontFamily="@font/fonts1"/>
+        <!--<TextView-->
+            <!--android:layout_width="400dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="left"-->
+            <!--android:text="รายการผลผลิต"-->
+            <!--android:textColor="#000000"-->
+            <!--android:textSize="33dp"-->
+            <!--app:fontFamily="@font/fonts1" />-->
 
 
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
+
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="รายการผลผลิต"
+            android:textColor="#ffffff"
+            android:textSize="33dp"
+            app:fontFamily="@font/fonts1" />
 
         <Spinner
             android:layout_marginTop="10dp"

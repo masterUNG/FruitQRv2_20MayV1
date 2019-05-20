@@ -85,8 +85,8 @@ public class InfoLoginFragment extends Fragment {
             TextView firstnameTextView = getView().findViewById(R.id.editFristname);
             firstnameTextView.setText(jsonObject.getString("FirstName"));
 
-            TextView secondnameTextView = getView().findViewById(R.id.editSurname);
-            secondnameTextView.setText(jsonObject.getString("SecondName"));
+            TextView lastnameTextView = getView().findViewById(R.id.editSurname);
+            lastnameTextView.setText(jsonObject.getString("LastName"));
 
             TextView addressTextView = getView().findViewById(R.id.editAddress);
             addressTextView.setText(jsonObject.getString("Address"));

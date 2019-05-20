@@ -68,8 +68,9 @@ public class DetailMemberFragment extends Fragment {
                 Log.d("27AprilV2", "stringArrayList[" + i + "] ==> " + stringArrayList.get(i));
             }
 
-            typeUserSting = typeUsers[Integer.parseInt(stringArrayList.get(8))];
-            Log.d("27AprilV2", "typeUser ==> " + typeUserSting);
+
+
+
 
             //            ShowView
 
@@ -86,11 +87,21 @@ public class DetailMemberFragment extends Fragment {
             TextView addressTextView = getView().findViewById(R.id.txtAddress);
             addressTextView.setText(stringArrayList.get(4));
 
+
             TextView phonenameTextView = getView().findViewById(R.id.txtPhone);
             phonenameTextView.setText(stringArrayList.get(5));
+////
+
+
+            typeUserSting = typeUsers[Integer.parseInt(stringArrayList.get(8))];
+            Log.d("27AprilV2", "typeUser ==> " + typeUserSting);
+
 
             TextView typeuserTextView = getView().findViewById(R.id.txtType);
             typeuserTextView.setText(typeUserSting);
+
+//            TextView addcontactTextView = getView().findViewById(R.id.txtaddcontact);
+//            addcontactTextView.setText(stringArrayList.get(9));
 
         } catch (Exception e) {
             e.printStackTrace();

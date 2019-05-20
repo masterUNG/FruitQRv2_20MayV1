@@ -64,9 +64,11 @@ public class ShowListMemberFragment extends Fragment {
 
             ArrayList<String> nameStringArratList = new ArrayList<>();
             ArrayList<String> firstnameStringArratList = new ArrayList<>();
-            ArrayList<String> secondnameStringArratList = new ArrayList<>();
+            ArrayList<String> lastnameStringArratList = new ArrayList<>();
             ArrayList<String> phoneStringArratList = new ArrayList<>();
-            ArrayList<String> typeStringArratList = new ArrayList<>();
+//            ArrayList<String> typeStringArratList = new ArrayList<>();
+//            ArrayList<String> addcontactStringArratList = new ArrayList<>();
+
             final ArrayList<String> idmastertabelStringArratList = new ArrayList<>();
 
 
@@ -75,19 +77,20 @@ public class ShowListMemberFragment extends Fragment {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 nameStringArratList.add(jsonObject.getString("Name"));
                 firstnameStringArratList.add(jsonObject.getString("FirstName"));
-                secondnameStringArratList.add(jsonObject.getString("SecondName"));
+                lastnameStringArratList.add(jsonObject.getString("LastName"));
                 phoneStringArratList.add(jsonObject.getString("Phone"));
-
-                typeStringArratList.add(jsonObject.getString("TypeUser"));
+//                typeStringArratList.add(jsonObject.getString("TypeUser"));
+//                addcontactStringArratList.add(jsonObject.getString("AddContact"));
 
                 idmastertabelStringArratList.add(jsonObject.getString("id"));
 
             }
 
             ShowListMemberAdapter showListMemberAdapter = new ShowListMemberAdapter(getActivity(), nameStringArratList,
-                    firstnameStringArratList, secondnameStringArratList, phoneStringArratList, typeStringArratList, new OnClickItem() {
+                    firstnameStringArratList, lastnameStringArratList, phoneStringArratList,
+                    new OnClickItem() {
                 @Override
-                public void onClickitem(View view, int position) {
+                public void onClickitem(View view, int position) {// typeStringArratList,addcontactStringArratList,
                     Log.d("23AprilV1", "Position ==> " + position);
 
                     Intent intent = new Intent(getActivity(), ShowMemberActivity.class); //จะให้มันโยนค่าไปหน้าไหน

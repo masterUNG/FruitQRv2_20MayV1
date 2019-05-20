@@ -65,7 +65,7 @@ public class DetailFragment extends Fragment {
     private void createToolbar() {
         Toolbar toolbar = getView().findViewById(R.id.toolbarProduct);
         ((QRActivity)getActivity()).setSupportActionBar(toolbar);
-        ((QRActivity) getActivity()).getSupportActionBar().setTitle("Detail");
+        ((QRActivity) getActivity()).getSupportActionBar().setTitle("รายละเอียดผลิตภัณฑ์");
         ((QRActivity) getActivity()).getSupportActionBar().setHomeButtonEnabled(true);
         ((QRActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {

@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class ShowListMemberAdapter extends RecyclerView.Adapter<ShowListMemberAdapter.ShowListMemberViewHolder>{
 
     private Context context;
-    private ArrayList<String> nameStringArratList, firstnameStringArratList, secondnameStringArratList, phoneStringArratList, typeStringArrayList;
+    private ArrayList<String> nameStringArratList, firstnameStringArratList, lastnameStringArratList, phoneStringArratList, typeStringArrayList, addcontactStringArratList;
     private OnClickItem onClickItem;
     private LayoutInflater layoutInflater;
 
@@ -27,16 +27,18 @@ public class ShowListMemberAdapter extends RecyclerView.Adapter<ShowListMemberAd
     public ShowListMemberAdapter(Context context,
                                  ArrayList<String> nameStringArratList,
                                  ArrayList<String> firstnameStringArratList,
-                                 ArrayList<String> secondnameStringArratList,
+                                 ArrayList<String> lastnameStringArratList,
                                  ArrayList<String> phoneStringArratList,
-                                 ArrayList<String> typeStringArrayList,
+//                                 ArrayList<String> typeStringArrayList,
+//                                 ArrayList<String> addcontactStringArratList,
                                  OnClickItem onClickItem) {
         this.layoutInflater = LayoutInflater.from(context);
         this.nameStringArratList = nameStringArratList;
         this.firstnameStringArratList = firstnameStringArratList;
-        this.secondnameStringArratList = secondnameStringArratList;
+        this.lastnameStringArratList = lastnameStringArratList;
         this.phoneStringArratList = phoneStringArratList;
-        this.typeStringArrayList = typeStringArrayList;
+//        this.typeStringArrayList = typeStringArrayList;
+//        this.addcontactStringArratList = addcontactStringArratList;
         this.onClickItem = onClickItem;
     }
 
@@ -61,16 +63,19 @@ public class ShowListMemberAdapter extends RecyclerView.Adapter<ShowListMemberAd
 
         String name = nameStringArratList.get(i);
         String firstname = firstnameStringArratList.get(i);
-        String secondname = secondnameStringArratList.get(i);
+        String lastname = lastnameStringArratList.get(i);
         String phone = phoneStringArratList.get(i);
-        String type = typeStringArrayList.get(i);
+//        String type = typeStringArrayList.get(i);
+//        String addcontact = addcontactStringArratList.get(i);
 
 
         showListMemberViewHolder.nameTextView.setText(name);
         showListMemberViewHolder.firstTextView.setText(firstname);
-        showListMemberViewHolder.secondnameTextView.setText(secondname);
+        showListMemberViewHolder.lastnameTextView.setText(lastname);
         showListMemberViewHolder.phoneTextView.setText(phone);
-        showListMemberViewHolder.typeTextView.setText(type);
+//        showListMemberViewHolder.typeTextView.setText(type);
+//        showListMemberViewHolder.addcontactTextView.setText(addcontact);
+
 
         showListMemberViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,16 +92,17 @@ public class ShowListMemberAdapter extends RecyclerView.Adapter<ShowListMemberAd
 
     public class ShowListMemberViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView nameTextView, firstTextView, secondnameTextView, phoneTextView, typeTextView;
+        private TextView nameTextView, firstTextView, lastnameTextView, phoneTextView, typeTextView, addcontactTextView;
 
         public ShowListMemberViewHolder(@NonNull View itemView) {
             super(itemView);
 
             nameTextView = itemView.findViewById(R.id.txtName);
             firstTextView = itemView.findViewById(R.id.txtFirstName);
-            secondnameTextView = itemView.findViewById(R.id.txtSurname);
+            lastnameTextView = itemView.findViewById(R.id.txtSurname);
             phoneTextView = itemView.findViewById(R.id.txtPhone);
-            typeTextView = itemView.findViewById(R.id.txtType);
+//            typeTextView = itemView.findViewById(R.id.txtType);
+//            addcontactTextView = itemView.findViewById(R.id.txtaddcontact);
 
         }
 

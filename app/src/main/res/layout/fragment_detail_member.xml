@@ -240,6 +240,8 @@
                 android:background="#CEC8C8" />
 
 
+
+
             <!--&lt;!&ndash;User&ndash;&gt;-->
             <!--<TextView-->
                 <!--android:layout_width="wrap_content"-->
@@ -307,8 +309,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="60dp"
+
                 android:background="#CEC8C8" />
+
+            <!--&lt;!&ndash;ช่องทางการติดต่อ&ndash;&gt;-->
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="18dp"-->
+                <!--android:text="ช่องทางการติดต่อ :"-->
+                <!--android:textColor="#000000"-->
+                <!--android:textSize="24dp"-->
+                <!--android:textStyle="bold"-->
+                <!--app:fontFamily="@font/fonts1" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/txtaddcontact"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginBottom="-10dp"-->
+                <!--android:textColor="#000000"-->
+                <!--android:textSize="26dp"-->
+                <!--app:fontFamily="@font/fonts1" />-->
+
+            <!--&lt;!&ndash;Line ทำเส้น&ndash;&gt;-->
+            <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:layout_marginBottom="10dp"-->
+                <!--android:background="#CEC8C8" />-->
 
         </LinearLayout>
 

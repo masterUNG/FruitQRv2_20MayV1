@@ -5,12 +5,12 @@ import java.lang.ref.SoftReference;
 public class Myconstant {
 
     private String[] favoriteFruits = {"โปรดเลือกผลไม้","กล้วย","ส้ม","มะละกอ", "แตงโม","ทุเรียน", "เงาะ", "มะม่วง", "เชอร์รี่", "สับปะรด", "ลำไย"};
-    private String[] units = {"กล่อง","ขีด","กรัม","กิโลกรัม","ด้าม","ผล","ลัง","หวี"};
+    private String[] units = {"กิโลกรัม"};
     private String[] columnDetailProduct = {"id", "idRecord", "NameRecord", "TypeRecord", "idTypeFruit",
                                                 "Name", "Detail", "Image", "Amount", "Unit", "Date", "QRcode"};
     private String[] columnDetailFramer = {"id", "idRecord", "Name", "Amount", "Unit", "Date", "Namesend"};
-    private String[] columnUser = {"id", "Name", "FirstName", "SecondName", "Address", "Phone", "User", "Password", "TypeUser"};
-    private String[] columnUserFarmer = {"id", "Name", "FirstName", "SecondName", "Address", "Phone", "User", "Password", "TypeUser"};
+    private String[] columnUser = {"id", "Name", "FirstName", "LastName", "Address", "Phone", "User", "Password", "TypeUser"};
+    private String[] columnUserFarmer = {"id", "Name", "FirstName", "LastName", "Address", "Phone", "User", "Password", "TypeUser"};
 
 
     private String nameFileSharePreference = "Fruit";

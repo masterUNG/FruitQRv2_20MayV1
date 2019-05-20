@@ -41,8 +41,8 @@ public class MenuDrawerFragment extends Fragment {
     private String[] titleAdmin = {
             "หน้าหลัก",
             "สแกน QR Code",
-            "รายการผลผลิกชุมชน",
             "รายการผลผลิต",
+            "รายละเอียดผลผลิต",
             "เพิ่มผลผลิต",
             "รายการผลิตภัณฑ์",
             "เพิ่มผลิตภัณฑ์",
