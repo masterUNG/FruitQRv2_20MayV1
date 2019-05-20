@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".AddProductFragment">
+
+    <!--Content-->
+    <ScrollView
+        android:layout_above="@id/btnAddProduct"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:padding="20dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:textStyle="bold"
+                android:textSize="@dimen/h1"
+                android:text="โปรดเลือกผลผลิต"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontFamily="@font/fonts1"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@id/recyclerFramer"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"/>
+
+            <TextView
+                android:id="@+id/textChooseFruit"
+                android:textColor="#009688"
+                android:layout_margin="10dp"
+                android:textSize="24dp"
+                android:text="ผลผลิตที่เลือก"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontFamily="@font/fonts1"/>
+
+            <EditText
+                android:inputType="text"
+                android:id="@+id/edtProduct"
+                android:hint="ชื่อของผลิตภัณฑ์"
+                android:textSize="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fontFamily="@font/fonts1"/>
+
+            <EditText
+                android:id="@+id/edtDetailProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:hint="รายละเอียดของผลิตภัณฑ์"
+                android:textSize="24dp"
+                android:lines="3"
+                app:fontFamily="@font/fonts1"/>
+
+            <ImageView
+                android:src="@drawable/product"
+                android:layout_margin="10dp"
+                android:scaleType="center"
+                android:id="@+id/imvProduct"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_weight="1"
+                    android:id="@+id/edtAmount"
+                    android:inputType="number"
+                    android:hint="จำนวน"
+                    android:textSize="24dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:fontFamily="@font/fonts1"/>
+
+                <Spinner
+                    android:layout_weight="1"
+                    android:id="@+id/spnUnit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:fontFamily="@font/fonts1"/>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_centerVertical="true"
+
+                    android:id="@+id/txtDate"
+                    android:textSize="24dp"
+                    android:text="xx/xx/xxxx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:fontFamily="@font/fonts1"/>
+
+                <Button
+                    android:background="@drawable/calendar"
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/btnSetDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:fontFamily="@font/fonts1"/>
+
+            </RelativeLayout>
+
+            <ImageView
+                android:scaleType="centerInside"
+                android:src="@drawable/product0001"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <TextView
+                android:id="@+id/txtQRcode"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#009688"
+                android:textStyle="bold"
+                android:textSize="24dp"
+                android:text="product0001"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontFamily="@font/fonts1"/>
+
+
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!--Button Add-->
+    <Button
+        android:background="@drawable/tabsave"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btnAddProduct"
+        android:text="บันทึก"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

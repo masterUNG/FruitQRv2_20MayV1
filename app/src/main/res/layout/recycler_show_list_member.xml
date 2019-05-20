@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#D5D5D5"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="1dp"
+        android:background="@drawable/bg_item"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <!--Name-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="66dp"
+                android:layout_height="57dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+
+                android:src="@drawable/k1" />
+
+            <ImageView
+                android:layout_width="59dp"
+                android:layout_height="57dp"
+                android:layout_gravity="center_vertical"
+
+                android:layout_marginRight="20dp"
+                android:src="@drawable/k2" />
+
+            <TextView
+                android:id="@+id/txtName"
+                android:textColor="#009688"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                android:text="Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontFamily="@font/fonts1"/>
+
+
+        </LinearLayout>
+
+        <!--Amount and Unit and Date-->
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:text="ชื่อ :"
+                android:textSize="22dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontFamily="@font/fonts1"/>
+
+            <TextView
+                android:layout_marginLeft="55dp"
+                android:id="@+id/txtFirstName"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:text="FirstName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontFamily="@font/fonts1"/>
+
+            <TextView
+                android:id="@+id/txtSurname"
+                android:layout_marginLeft="119dp"
+                android:textStyle="bold"
+                android:textSize="22dp"
+                android:text="Surname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontFamily="@font/fonts1"/>
+
+            <TextView
+                android:id="@+id/txtPhone"
+                android:textColor="#8BC34A"
+                android:textStyle="bold"
+                android:textSize="22dp"
+                android:layout_marginRight="20dp"
+                android:layout_alignParentRight="true"
+                android:text="Phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontFamily="@font/fonts1"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:textSize="22dp"
+                android:text="ประเภทผู้ใช้งาน :"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontFamily="@font/fonts1"/>
+
+            <TextView
+                android:layout_marginLeft="130dp"
+                android:textSize="22dp"
+                android:id="@+id/txtType"
+                android:text="Type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontFamily="@font/fonts1"/>
+
+
+        </RelativeLayout>
+
+
+        <!--Line ทำเส้น-->
+        <!--<View-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:background="#CEC8C8"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"/>-->
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

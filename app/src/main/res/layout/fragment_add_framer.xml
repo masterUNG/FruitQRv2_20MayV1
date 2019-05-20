@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".AddFramerFragment">
+
+    <LinearLayout
+        android:background="@color/colorPrimaryeiei"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:textSize="33dp"
+            android:text="รายการผลผลิต"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:fontFamily="@font/fonts1"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Spinner
+            android:layout_marginTop="10dp"
+            android:id="@+id/spinnerFruit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            app:fontFamily="@font/fonts1"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+<!-- android:inputType="number" ใส่ได้แค่ตัวเเลข-->
+            <EditText
+                android:inputType="number"
+                android:hint="จำนวน "
+                android:layout_weight="2"
+                android:id="@+id/edtAmount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="24dp"
+                app:fontFamily="@font/fonts1"/>
+
+            <Spinner
+                android:layout_weight="4"
+                android:id="@+id/spinnerUnit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:fontFamily="@font/fonts1"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/txtShowDate"
+                android:layout_marginBottom="40dp"
+                android:text="วันที่การเก็บเกี่ยว :"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                app:fontFamily="@font/fonts1" />
+
+            <TextView
+                android:layout_marginTop="32dp"
+                android:textColor="#000000"
+                android:id="@+id/txtShowDate"
+                android:textSize="30dp"
+                android:text="dd-MM-yyyy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontFamily="@font/fonts1"/>
+            <!--android:text="ปฏิทิน"-->
+            <!--android:paddingTop="80dp"-->
+
+            <Button
+                android:layout_marginRight="10dp"
+                android:id="@+id/btnSetDate"
+                android:background="@drawable/calendar"
+                android:layout_alignParentRight="true"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                app:fontFamily="@font/fonts1"/>
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:textSize="24dp"
+            android:text="ชื่อสวน :"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            app:fontFamily="@font/fonts1"/>
+
+        <TextView
+            android:layout_marginTop="-8dp"
+            android:textColor="#000000"
+            android:id="@+id/txtName"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fontFamily="@font/fonts1"/>
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:textSize="24dp"
+            android:text="ที่ตั้ง :"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fontFamily="@font/fonts1"/>
+
+        <TextView
+            android:layout_marginTop="-8dp"
+            android:textColor="#000000"
+            android:id="@+id/txtAddress"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fontFamily="@font/fonts1"/>
+
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:textSize="24dp"
+            android:text="เบอร์โทรศัพท์ :"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fontFamily="@font/fonts1"/>
+
+        <TextView
+            android:layout_marginTop="-8dp"
+            android:textColor="#000000"
+            android:id="@+id/txtPhone"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fontFamily="@font/fonts1"/>
+
+
+        <Button
+            android:background="@drawable/tabsave"
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:text="บันทึก"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            app:fontFamily="@font/fonts1" />
+
+
+    </LinearLayout>
+
+</FrameLayout>

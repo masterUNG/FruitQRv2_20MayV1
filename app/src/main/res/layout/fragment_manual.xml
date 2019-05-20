@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ManualFragment">
+
+    <!--Content-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:padding="20dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:src="@drawable/imv1"
+                android:layout_margin="1dp"
+                android:scaleType="center"
+                android:id="@+id/imv1"
+                android:layout_width="match_parent"
+                android:layout_height="650dp" />
+
+            <ImageView
+                android:src="@drawable/imv2"
+                android:scaleType="center"
+                android:id="@+id/imv2"
+                android:layout_width="match_parent"
+                android:layout_height="650dp" />
+
+            <ImageView
+                android:src="@drawable/imv3"
+                android:scaleType="center"
+                android:id="@+id/imv3"
+                android:layout_width="match_parent"
+                android:layout_height="650dp" />
+
+            <ImageView
+                android:src="@drawable/imv4"
+                android:scaleType="center"
+                android:id="@+id/imv4"
+                android:layout_width="match_parent"
+                android:layout_height="650dp" />
+
+            <ImageView
+                android:src="@drawable/imv5"
+                android:scaleType="center"
+                android:id="@+id/imv5"
+                android:layout_width="match_parent"
+                android:layout_height="650dp" />
+
+            <ImageView
+                android:src="@drawable/imv6"
+                android:scaleType="center"
+                android:id="@+id/imv6"
+                android:layout_width="match_parent"
+                android:layout_height="650dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</RelativeLayout>
+
