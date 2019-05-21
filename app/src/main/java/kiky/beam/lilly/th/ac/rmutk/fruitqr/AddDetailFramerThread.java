@@ -29,9 +29,11 @@ public class AddDetailFramerThread extends AsyncTask<String, Void, String> {
                     .add("Amount", strings[2])
                     .add("Unit", strings[3])
                     .add("Date", strings[4])
+                    .add("Dateout", strings[5])
+                    .add("FarmerLog", strings[6])
                     .build();
             Request.Builder builder = new Request.Builder();
-            Request request = builder.url(strings[5]).post(requestBody).build();
+            Request request = builder.url(strings[7]).post(requestBody).build();
             Response response = okHttpClient.newCall(request).execute();
             return  response.body().string();
 

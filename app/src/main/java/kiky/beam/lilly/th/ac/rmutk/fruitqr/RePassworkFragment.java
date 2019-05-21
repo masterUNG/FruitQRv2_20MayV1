@@ -55,9 +55,9 @@ public class RePassworkFragment extends Fragment {
                 MyAlertDialog myAlertDialog = new MyAlertDialog(getActivity());
 
                 if (password.isEmpty() || rePassword.isEmpty()) {
-                    myAlertDialog.normalDialog("Have Space", "ห้ามมีช่องว่าง");
+                    myAlertDialog.normalDialog("มีช่องว่าง", "ห้ามมีช่องว่าง");
                 } else if (!(password.equals(rePassword))) {
-                    myAlertDialog.normalDialog("Password Not Math", "Password ไม่ตรงกัน คะ");
+                    myAlertDialog.normalDialog("รหัสผ่านไม่ตรงกัน", "รหัสผ่านไม่ตรงกัน");
                 } else {
 
                     try {

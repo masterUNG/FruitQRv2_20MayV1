@@ -37,8 +37,8 @@ import java.util.Calendar;
 public class AddFramerFragment extends Fragment {
 
     private Myconstant myconstant = new Myconstant();
-    private String idRecord, nameFruit, dateString, amountString, unitString;
-    private TextView dateTextView;
+    private String idRecord, nameFruit, dateString, amountString, unitString, dateoutString, farmerlogString;
+    private TextView dateTextView,date2TextView;
     private boolean nameFruitABoolean = true;
 
 
@@ -79,6 +79,10 @@ public class AddFramerFragment extends Fragment {
                 amountString = editText.getText().toString().trim();
                 dateString = dateTextView.getText().toString();
 
+                EditText editText1 = getView().findViewById(R.id.txtFarmerLog);
+                dateoutString = date2TextView.getText().toString();
+                farmerlogString = editText1.getText().toString().trim();
+
                 if (nameFruitABoolean) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                     builder.setTitle("โปรดเลือกชื่อผลผลิต");
@@ -105,6 +109,18 @@ public class AddFramerFragment extends Fragment {
                     });
                     builder.show();
 
+                } else if (farmerlogString.isEmpty()) {//isEmpty มีการกรอกหรือป่าว
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setTitle("โปรดกรอกล็อตการขนส่ง");
+                    builder.setMessage("กรุณากรอกล็อตการขนส่ง");
+                    builder.setPositiveButton("ยืนยัน", new DialogInterface.OnClickListener() {//ปุ่มที่2
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    builder.show();
+
 //                    myAlertDialog.normalDialog("โปรดกรอกราคาผลผลิต", "กรุณากรอกราคาผลผลิตอีกครั้ง");
                 } else {
                     Log.d("7April", "idRecord ==>> "+ idRecord);
@@ -112,6 +128,9 @@ public class AddFramerFragment extends Fragment {
                     Log.d("7April", "Amount ==>> "+ amountString);
                     Log.d("7April", "Unit ==>> "+ unitString);
                     Log.d("7April", "Date ==>> "+ dateString);
+
+                    Log.d("7April", "Dateout ==>> "+ dateoutString);
+                    Log.d("7April", "farmerlog ==>> "+ farmerlogString);
 
                     comfirmUpload(); //ป็อบอัพ
                 }
@@ -124,7 +143,8 @@ public class AddFramerFragment extends Fragment {
     private void comfirmUpload() { //ป็อบอัพ
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle("โปรดยืนยันข้อมูล");
-        builder.setMessage("ชื่อผลผลิต = " + nameFruit + "\n" + "ราคา = " + amountString + " " + unitString + "\n" + "วันที่เก็บเกี่ยว = "+ dateString);
+        builder.setMessage("ชื่อผลผลิต = " + nameFruit + "\n" + "ราคา = " + amountString + " " + unitString + "\n" + "วันที่เก็บเกี่ยว = "+ dateString +
+                "\n" + "วันที่ส่งผลผลิต = "+ dateoutString +  "\n" + "ล็อตที่ผลิต = "+ farmerlogString);
         builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {//ปุ่มที่1
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -165,7 +185,7 @@ public class AddFramerFragment extends Fragment {
 
             AddDetailFramerThread addDetailFramerThread = new AddDetailFramerThread(getActivity());
             addDetailFramerThread.execute(idRecord, nameFruit, amountString, unitString,
-                    dateString, myconstant.getUrlAddDetailFramer());
+                    dateString,dateoutString,farmerlogString, myconstant.getUrlAddDetailFramer());
             if (Boolean.parseBoolean(addDetailFramerThread.get())){
                 //สำเร็จ
                 getActivity().getSupportFragmentManager()
@@ -207,10 +227,13 @@ public class AddFramerFragment extends Fragment {
 
         //ทำให้เป็นวันที่ปัจจุบัน
         dateTextView = getView().findViewById(R.id.txtShowDate);
+        date2TextView = getView().findViewById(R.id.txtShowDate2);
 
         final Calendar calendar = Calendar.getInstance();
         final DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
         dateTextView.setText(dateFormat.format(calendar.getTime()));
+        date2TextView.setText(dateFormat.format(calendar.getTime()));
 
         //สร้างปุ่มปฎิทิน
         Button button = getView().findViewById(R.id.btnSetDate);
@@ -225,6 +248,27 @@ public class AddFramerFragment extends Fragment {
                         Calendar calendar1 = Calendar.getInstance();
                         calendar1.set(year, month, dayOfMonth);
                         dateTextView.setText(dateFormat.format(calendar1.getTime()));
+
+
+                    }
+                }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));//ตั้งการค่าตั้งต้น ทำการสั่งวันที่ปัจจุบันให้ตรงกับปุ่ม
+                datePickerDialog.show();
+            }//DAY_OF_MONTH 30วัน
+        });
+
+        //สร้างปุ่มปฎิทิน
+        Button button2 = getView().findViewById(R.id.btnSetDate2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        //ตั้งค่าในปฎิทิน ในการกดตกลง
+                        Calendar calendar1 = Calendar.getInstance();
+                        calendar1.set(year, month, dayOfMonth);
+                        date2TextView.setText(dateFormat.format(calendar1.getTime()));
 
 
                     }
