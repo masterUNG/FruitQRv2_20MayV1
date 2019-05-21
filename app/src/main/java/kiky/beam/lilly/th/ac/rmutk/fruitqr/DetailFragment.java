@@ -90,6 +90,7 @@ public class DetailFragment extends Fragment {
         qrCode = getArguments().getString("QRcode");
         if (!qrCode.isEmpty()) {
 
+
 //            Have QR codeValue
             try {
 

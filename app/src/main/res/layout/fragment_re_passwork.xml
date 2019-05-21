@@ -15,6 +15,7 @@
         android:layout_marginTop="100dp"
         android:orientation="vertical">
 
+
         <ImageView
             android:src="@drawable/iconsetting"
             android:layout_margin="10dp"
@@ -22,41 +23,35 @@
             android:id="@+id/imvProduct"
             android:layout_width="match_parent"
             android:layout_height="200dp" />
+
         <EditText
-            android:id="@+id/edtName"
+
+            android:id="@+id/edtPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ชื่อสวน/ชื่อร้าน"
-            android:inputType="text"
+            android:hint="รหัสผ่าน"
+            android:inputType="textPassword"
             app:fontFamily="@font/fonts1"
             android:textSize="25dp"/>
 
         <EditText
-            android:id="@+id/edtUser"
+            android:id="@+id/edtRePassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ชื่อผู้ใช้งาน"
-            android:inputType="text"
-            app:fontFamily="@font/fonts1"
-            android:textSize="25dp"/>
-
-        <EditText
-            android:id="@+id/edtPhone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="เบอร์โทรศัพท์"
-            android:inputType="text"
+            android:hint="ยืนยันรหัสผ่านอีกครั้ง"
+            android:inputType="textPassword"
             app:fontFamily="@font/fonts1"
             android:textSize="25dp"/>
 
         <Button
-            android:id="@+id/btnCheck"
+            android:id="@+id/btnSave"
             android:background="@drawable/tabsave"
-            android:text="ตรวจสอบ"
+            android:text="บันทึก"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:fontFamily="@font/fonts1"
             android:textSize="25dp"/>
+
 
 
     </LinearLayout>

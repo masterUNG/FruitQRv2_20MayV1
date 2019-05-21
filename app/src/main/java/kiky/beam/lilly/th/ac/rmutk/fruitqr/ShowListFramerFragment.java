@@ -2,10 +2,12 @@ package kiky.beam.lilly.th.ac.rmutk.fruitqr;
 
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -82,7 +84,16 @@ public class ShowListFramerFragment extends Fragment {
                 EditText editText = getView().findViewById(R.id.edtSearch);
                 search = editText.getText().toString().trim();
                 if (search.isEmpty()) {
-                    myAlertDialog.normalDialog("มีช่องว่าง", "ค้นหาห้ามมีช่องว่าง");
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setTitle("มีช่องว่าง");
+                    builder.setMessage("ค้นหาห้ามมีช่องว่าง");
+                    builder.setPositiveButton("ยืนยัน", new DialogInterface.OnClickListener() {//ปุ่มที่2
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    builder.show();
                 } else {
 
                     createRecyclerView(indexSearch);
@@ -119,8 +130,16 @@ public class ShowListFramerFragment extends Fragment {
                     result = getDataWhereOneColumn.get();
 
                     if (result.equals("null")) {
-                        MyAlertDialog myAlertDialog = new MyAlertDialog(getActivity());
-                        myAlertDialog.normalDialog("ไม่มีชื่อผลไม้นี้", "ไม่มีชื่อผลไม้นี้ในฐานข้อมูล");
+                        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                        builder.setTitle("ไม่มีชื่อผลไม้นี้");
+                        builder.setMessage("ไม่มีชื่อผลไม้นี้ในฐานข้อมูล");
+                        builder.setPositiveButton("ยืนยัน", new DialogInterface.OnClickListener() {//ปุ่มที่2
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                        builder.show();
                     }
 
                     Log.d("15MayV1", "result ==> " + result);
@@ -137,7 +156,17 @@ public class ShowListFramerFragment extends Fragment {
                     MyAlertDialog myAlertDialog = new MyAlertDialog(getActivity());
 
                     if (resultGarden.equals("null")) {
-                        myAlertDialog.normalDialog("ไม่มีชื่อสวนนี้", "ไม่มีชื่อสวนนี้ในฐานข้อมูล");
+                        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                        builder.setTitle("ไม่มีชื่อสวนนี้");
+                        builder.setMessage("ไม่มีชื่อสวนนี้ในฐานข้อมูล");
+                        builder.setPositiveButton("ยืนยัน", new DialogInterface.OnClickListener() {//ปุ่มที่2
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                        builder.show();
+
                     } else {
                         JSONArray jsonArray = new JSONArray(resultGarden);
                         JSONObject jsonObject = jsonArray.getJSONObject(0);

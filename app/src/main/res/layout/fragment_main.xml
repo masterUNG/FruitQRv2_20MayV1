@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/back4"
     tools:context=".MainFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -11,7 +12,7 @@
     <!--Content-->
 
     <LinearLayout
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="135dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:orientation="vertical"
@@ -26,8 +27,38 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="15dp"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<TextView-->
+                <!--android:background="@mipmap/iconkon"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="0.12"-->
+                <!--android:textColor="#000000"-->
+                <!--android:textSize="24dp"-->
+                <!--android:textStyle="bold"-->
+                <!--app:fontFamily="@font/fonts1"/>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/txtNamee"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:textColor="#000000"-->
+                <!--android:textSize="26dp"-->
+                <!--app:fontFamily="@font/fonts1"/>-->
+
+
+
+        <!--</LinearLayout>-->
+
         <!--User-->
         <EditText
+
             android:id="@+id/edtUser"
             android:inputType="text"
             android:hint="ชื่อผู้ใช้งาน :"
@@ -67,7 +98,7 @@
             android:textColor="@color/colorAccent"
             android:layout_marginTop="10dp"
             android:layout_gravity="center"
-            android:text="ลืมรหัสผ่าน"
+            android:text="ลืมรหัสผ่าน?"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 

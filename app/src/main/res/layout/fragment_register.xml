@@ -7,6 +7,8 @@
     tools:context=".RegisterFragment">
 
 
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -146,7 +148,8 @@
                         android:layout_height="wrap_content"
                         android:text="เจ้าของผลิตภัณฑ์"
                         app:fontFamily="@font/fonts1"
-                        android:textSize="25dp"/>
+                        android:textSize="25dp"
+                        android:layout_marginBottom="60dp"/>
 
                     <!--<RadioButton-->
                         <!--android:id="@+id/redFarmerandProduct"-->

@@ -197,16 +197,52 @@ public class AddProductFragment extends Fragment {
 
                 MyAlertDialog myAlertDialog = new MyAlertDialog(getActivity());
                 if (idTypeFruid.length() == 0) {
-                    myAlertDialog.normalDialog("ยังไม่ได้เลือก ผลผลิต", "กรุณาเลือกผลผลิต");
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setTitle("ยังไม่ได้เลือกผลผลิต");
+                    builder.setMessage("กรุณาเลือกผลผลิต");
+                    builder.setPositiveButton("ยืนยัน", new DialogInterface.OnClickListener() {//ปุ่มที่2
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    builder.show();
 
                 } else if (Name.isEmpty()) {
-                    myAlertDialog.normalDialog("ไม่มีชื่อผลิตภัณฑ์", "กรุณาพิมพ์ชื่อผลิตภัณฑ์");
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setTitle("ไม่มีชื่อผลิตภัณฑ์");
+                    builder.setMessage("กรุณาพิมพ์ชื่อผลิตภัณฑ์");
+                    builder.setPositiveButton("ยืนยัน", new DialogInterface.OnClickListener() {//ปุ่มที่2
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    builder.show();
 
                 } else if (Detail.isEmpty()) {
-                    myAlertDialog.normalDialog("ไม่มีรายละเอียดผลิตภัณฑ์", "กรุณาพิมพ์รายละเอียดผลิตภัณฑ์");
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setTitle("ไม่มีรายละเอียดผลิตภัณฑ์");
+                    builder.setMessage("กรุณาพิมพ์รายละเอียดผลิตภัณฑ์");
+                    builder.setPositiveButton("ยืนยัน", new DialogInterface.OnClickListener() {//ปุ่มที่2
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    builder.show();
 
                 } else if (Amount.isEmpty()) {
-                    myAlertDialog.normalDialog("ไม่มีจำนวนผลิตภัณฑ์", "กรุณาพิมพ์จำนวน");
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setTitle("ไม่มีจำนวนผลิตภัณฑ์");
+                    builder.setMessage("กรุณาพิมพ์จำนวน");
+                    builder.setPositiveButton("ยืนยัน", new DialogInterface.OnClickListener() {//ปุ่มที่2
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    builder.show();
 
                 } else if (picABoolean) {
                     Image = myconstant.getUrlProductPic();
@@ -438,7 +474,7 @@ public class AddProductFragment extends Fragment {
 
         //ป็อบอัพ
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("ยืนยันการเลือกผลผลิค");
+        builder.setTitle("ยืนยันการเลือกผลผลิต");
         builder.setMessage("คุณต้องการเลือก " + nameFruit);
         builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {
             @Override
@@ -450,7 +486,7 @@ public class AddProductFragment extends Fragment {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 idTypeFruid = idFruit;
-                textView.setText("ผลผลิต ที่เลือก " + nameFruit);
+                textView.setText("ผลผลิตที่เลือก " + nameFruit);
                 dialog.dismiss();
             }
         });

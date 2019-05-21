@@ -11,52 +11,113 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:padding="20dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
 
             <ImageView
-                android:src="@drawable/imv1"
-                android:layout_margin="1dp"
+                android:src="@drawable/ad1"
                 android:scaleType="center"
                 android:id="@+id/imv1"
                 android:layout_width="match_parent"
                 android:layout_height="650dp" />
 
             <ImageView
-                android:src="@drawable/imv2"
+                android:src="@drawable/ad2"
                 android:scaleType="center"
                 android:id="@+id/imv2"
                 android:layout_width="match_parent"
                 android:layout_height="650dp" />
 
             <ImageView
-                android:src="@drawable/imv3"
+                android:src="@drawable/ad3"
                 android:scaleType="center"
                 android:id="@+id/imv3"
                 android:layout_width="match_parent"
                 android:layout_height="650dp" />
 
             <ImageView
-                android:src="@drawable/imv4"
+                android:src="@drawable/ad4"
                 android:scaleType="center"
                 android:id="@+id/imv4"
                 android:layout_width="match_parent"
                 android:layout_height="650dp" />
 
             <ImageView
-                android:src="@drawable/imv5"
+                android:src="@drawable/ad5"
                 android:scaleType="center"
                 android:id="@+id/imv5"
                 android:layout_width="match_parent"
                 android:layout_height="650dp" />
 
             <ImageView
-                android:src="@drawable/imv6"
+                android:src="@drawable/ad6"
                 android:scaleType="center"
                 android:id="@+id/imv6"
+                android:layout_width="match_parent"
+                android:layout_height="650dp" />
+
+            <ImageView
+                android:src="@drawable/ad7"
+                android:scaleType="center"
+                android:id="@+id/imv7"
+                android:layout_width="match_parent"
+                android:layout_height="650dp" />
+
+            <ImageView
+                android:src="@drawable/ad8"
+                android:scaleType="center"
+                android:id="@+id/imv8"
+                android:layout_width="match_parent"
+                android:layout_height="650dp" />
+
+            <ImageView
+                android:src="@drawable/ad9"
+                android:scaleType="center"
+                android:id="@+id/imv9"
+                android:layout_width="match_parent"
+                android:layout_height="650dp" />
+
+            <ImageView
+                android:src="@drawable/ad10"
+                android:scaleType="center"
+                android:id="@+id/imv10"
+                android:layout_width="match_parent"
+                android:layout_height="650dp" />
+
+            <ImageView
+                android:src="@drawable/ad11"
+                android:scaleType="center"
+                android:id="@+id/imv11"
+                android:layout_width="match_parent"
+                android:layout_height="650dp" />
+
+            <ImageView
+                android:src="@drawable/ad12"
+                android:scaleType="center"
+                android:id="@+id/imv12"
+                android:layout_width="match_parent"
+                android:layout_height="650dp" />
+
+            <ImageView
+                android:src="@drawable/ad13"
+                android:scaleType="center"
+                android:id="@+id/imv13"
+                android:layout_width="match_parent"
+                android:layout_height="650dp" />
+
+            <ImageView
+                android:src="@drawable/ad14"
+                android:scaleType="center"
+                android:id="@+id/imv14"
+                android:layout_width="match_parent"
+                android:layout_height="650dp" />
+
+            <ImageView
+                android:src="@drawable/ad15"
+                android:scaleType="center"
+                android:id="@+id/imv15"
                 android:layout_width="match_parent"
                 android:layout_height="650dp" />
 

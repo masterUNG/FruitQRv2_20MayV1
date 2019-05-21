@@ -106,7 +106,16 @@ public class MainFragment extends Fragment {
 
                 MyAlertDialog myAlertDialog = new MyAlertDialog(getActivity());
                 if (user.isEmpty() || password.isEmpty()) {
-                    myAlertDialog.normalDialog("กรุณากรอกข้อมูลให้ครบ", "โปรดกรอกข้อมูลให้ครบ");
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setTitle("กรุณากรอกข้อมูลให้ครบ");
+                    builder.setMessage("โปรดกรอกข้อมูลให้ครบ");
+                    builder.setPositiveButton("ยืนยัน", new DialogInterface.OnClickListener() {//ปุ่มที่2
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    builder.show();
                 } else {
 
                  //   Check Authen
@@ -135,7 +144,16 @@ public class MainFragment extends Fragment {
                         }
 
                         if (b){
-                            myAlertDialog.normalDialog("กรุณาตรวจสอบชื่อผู้ใช้งานให้ถูกต้อง", "ไม่มีผู้ใช้งานนี้อยู่ในระบบ");
+                            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                            builder.setTitle("กรุณาตรวจสอบชื่อผู้ใช้งานให้ถูกต้อง");
+                            builder.setMessage("ไม่มีผู้ใช้งานนี้อยู่ในระบบ");
+                            builder.setPositiveButton("ยืนยัน", new DialogInterface.OnClickListener() {//ปุ่มที่2
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
+                            builder.show();
                         }else if (password.equals(truePassword)) {
                             Toast.makeText(getActivity(),"ยินดีต้อนรับ  "+name,Toast.LENGTH_SHORT).show();;
                             //ฝัง idlogin ในแอพ
@@ -153,6 +171,15 @@ public class MainFragment extends Fragment {
                             getActivity().finish(); //คำสั่งปิดแอพ
 
                         }else{
+//                            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+//                            builder.setTitle("กรุณาตรวจสอบรหัสผ่านให้ถูกต้อง");
+//                            builder.setMessage("โปรดตรวจสอบรหัสผ่านอีกครั้ง");
+//                            builder.setPositiveButton("ยืนยัน", new DialogInterface.OnClickListener() {//ปุ่มที่2
+//                                @Override
+//                                public void onClick(DialogInterface dialog, int which) {
+//                                    dialog.dismiss();
+//                                }
+//                            });
                             myAlertDialog.normalDialog("กรุณาตรวจสอบรหัสผ่านให้ถูกต้อง","โปรดตรวจสอบรหัสผ่านอีกครั้ง");
 
                         }

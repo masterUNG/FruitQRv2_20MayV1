@@ -27,7 +27,7 @@ public class MenuDrawerFragment extends Fragment {
     private int[] iconAdmin = {
             R.drawable.ic_action_home,
             R.drawable.ic_action_qrb,
-            R.drawable.ic_action_home,
+            R.drawable.ic_action_listframer,
             R.drawable.ic_action_listframer,
             R.drawable.ic_action_framer,
             R.drawable.ic_action_listframer,
