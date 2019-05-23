@@ -104,7 +104,56 @@ public class DetailFragment extends Fragment {
                 JSONArray jsonArray = new JSONArray(json);
                 JSONObject jsonObject = jsonArray.getJSONObject(0);
 
-                String nameRecord = jsonObject.getString("NameRecord");
+
+                String nameRecordString = jsonObject.getString("NameRecord");
+                String namefruitString = jsonObject.getString("Name");
+                String detailString = jsonObject.getString("Detail");
+                String imageString = jsonObject.getString("Image");
+                String amountString = jsonObject.getString("Amount");
+                String unitString = jsonObject.getString("Unit");
+                String dateString = jsonObject.getString("Date");
+
+
+//                String imageString = jsonObject.getString("Image");
+//                String namefruitString = jsonObject.getString("Name");
+//                String amountString = jsonObject.getString("Amount");
+//                String unitString = jsonObject.getString("Unit");
+//                String dateString = jsonObject.getString("Date");
+//                String detailString = jsonObject.getString("Detail");
+//                String nameRecordString = jsonObject.getString("NameRecord");
+
+
+                TextView nameTextView = getView().findViewById(R.id.txtNamee);
+                nameTextView.setText(nameRecordString);
+
+                TextView namefruitTextView = getView().findViewById(R.id.txtNamee);
+                namefruitTextView.setText(namefruitString);
+
+                TextView detailTextView = getView().findViewById(R.id.txtProductlist);
+                detailTextView.setText(detailString);
+
+                ImageView imageView = getView().findViewById(R.id.imvImage);
+                Picasso.get().load(imageString).into(imageView);
+
+//                TextView amountTextView = getView().findViewById(R.id.txtProductAmount);
+//                amountTextView.setText(amountString);
+//
+//                TextView unitTextView = getView().findViewById(R.id.txtProductUnit);
+//                unitTextView.setText(unitString);
+
+                TextView dateTextView = getView().findViewById(R.id.txtProductdate);
+                dateTextView.setText(dateString);
+
+
+
+
+
+
+
+
+
+
+
 
 
 

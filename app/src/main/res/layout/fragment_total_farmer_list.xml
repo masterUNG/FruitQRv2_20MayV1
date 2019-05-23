@@ -7,33 +7,33 @@
     android:layout_height="match_parent"
     tools:context=".TotalFarmerListFragment">
 
-   <RelativeLayout
-       android:layout_marginTop="15dp"
-       android:layout_marginRight="16dp"
-       android:layout_marginLeft="16dp"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content">
+   <!--<RelativeLayout-->
+       <!--android:layout_marginTop="15dp"-->
+       <!--android:layout_marginRight="16dp"-->
+       <!--android:layout_marginLeft="16dp"-->
+       <!--android:layout_width="match_parent"-->
+       <!--android:layout_height="wrap_content">-->
 
-      <EditText
+      <!--<EditText-->
 
-          android:id="@+id/edtSearch1"
-          android:hint="ค้นหา : "
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          app:fontFamily="@font/fonts1"
-          android:textSize="20dp"/>
+          <!--android:id="@+id/edtSearch1"-->
+          <!--android:hint="ค้นหา : "-->
+          <!--android:layout_width="match_parent"-->
+          <!--android:layout_height="wrap_content"-->
+          <!--app:fontFamily="@font/fonts1"-->
+          <!--android:textSize="20dp"/>-->
 
-      <Button
+      <!--<Button-->
 
-          android:id="@+id/btnSeach1"
-          android:layout_alignParentRight="true"
-          android:background="@drawable/tabfind"
+          <!--android:id="@+id/btnSeach1"-->
+          <!--android:layout_alignParentRight="true"-->
+          <!--android:background="@drawable/tabfind"-->
 
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          app:fontFamily="@font/fonts1"/>
+          <!--android:layout_width="wrap_content"-->
+          <!--android:layout_height="wrap_content"-->
+          <!--app:fontFamily="@font/fonts1"/>-->
 
-   </RelativeLayout>
+   <!--</RelativeLayout>-->
 
    <android.support.v7.widget.RecyclerView
        android:layout_margin="10dp"

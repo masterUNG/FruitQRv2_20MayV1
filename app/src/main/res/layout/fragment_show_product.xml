@@ -71,7 +71,9 @@
                 <!--android:layout_marginTop="10dp"-->
                 <!--android:background="#CEC8C8" />-->
 
+            <!--android:background="@drawable/tulen"-->
             <ImageView
+
                 android:layout_marginTop="15dp"
                 android:id="@+id/imvImage"
                 android:layout_width="match_parent"
@@ -96,7 +98,9 @@
                     android:textStyle="bold"
                     app:fontFamily="@font/fonts1"/>
 
+                <!--android:text="ทุเรียนทอด"-->
                 <TextView
+
                     android:id="@+id/txtNamee"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -115,50 +119,52 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"/>
 
-            <!--จำนวน และ หน่วย-->
-            <LinearLayout
-                android:layout_marginTop="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+            <!--&lt;!&ndash;จำนวน และ หน่วย&ndash;&gt;-->
+            <!--<LinearLayout-->
+                <!--android:layout_marginTop="15dp"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal">-->
 
-                <TextView
+                <!--<TextView-->
 
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.6"
-                    android:text="จำนวน :"
-                    android:textColor="#000000"
-                    android:textSize="24dp"
-                    android:textStyle="bold"
-                    app:fontFamily="@font/fonts1"/>
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="0.6"-->
+                    <!--android:text="จำนวน :"-->
+                    <!--android:textColor="#000000"-->
+                    <!--android:textSize="24dp"-->
+                    <!--android:textStyle="bold"-->
+                    <!--app:fontFamily="@font/fonts1"/>-->
 
-                <TextView
-                    android:id="@+id/txtProductAmount"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.3"
-                    android:textColor="#000000"
-                    android:textSize="26dp"
-                    app:fontFamily="@font/fonts1"/>
+                <!--<TextView-->
+                    <!--android:text="5"-->
+                    <!--android:id="@+id/txtProductAmount"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="0.3"-->
+                    <!--android:textColor="#000000"-->
+                    <!--android:textSize="26dp"-->
+                    <!--app:fontFamily="@font/fonts1"/>-->
 
-                <TextView
-                    android:id="@+id/txtProductUnit"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.5"
-                    android:textColor="#000000"
-                    android:textSize="26dp"
-                    app:fontFamily="@font/fonts1"/>
+                <!--<TextView-->
+                    <!--android:text="กิโลกรัม"-->
+                    <!--android:id="@+id/txtProductUnit"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1.5"-->
+                    <!--android:textColor="#000000"-->
+                    <!--android:textSize="26dp"-->
+                    <!--app:fontFamily="@font/fonts1"/>-->
 
-            </LinearLayout>
+            <!--</LinearLayout>-->
 
-            <!--Line ทำเส้น-->
-            <View
-                android:layout_marginTop="10dp"
-                android:background="#CEC8C8"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"/>
+            <!--&lt;!&ndash;Line ทำเส้น&ndash;&gt;-->
+            <!--<View-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:background="#CEC8C8"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"/>-->
 
             <!--วันที่-->
             <LinearLayout
@@ -177,7 +183,9 @@
                     android:textStyle="bold"
                     app:fontFamily="@font/fonts1"/>
 
+                <!--android:text="14/05/2019"-->
                 <TextView
+
                     android:id="@+id/txtProductdate"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -196,6 +204,44 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"/>
 
+
+            <!--วันที่-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="ล็อตการผลิต  : "
+                    android:textColor="#000000"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/fonts1"/>
+
+                <!--android:text="1/2019"-->
+                <TextView
+
+                    android:id="@+id/txtlog"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="26dp"
+                    app:fontFamily="@font/fonts1"/>
+
+
+            </LinearLayout>
+
+            <!--Line ทำเส้น-->
+            <View
+                android:layout_marginTop="10dp"
+                android:background="#CEC8C8"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
             <!--วันที่-->
             <!--<LinearLayout-->
                 <!--android:layout_width="match_parent"-->
@@ -239,7 +285,9 @@
                 android:textStyle="bold"
                 app:fontFamily="@font/fonts1"/>
 
+            <!--android:text="หวาน อร่อย"-->
             <TextView
+
                 android:layout_marginTop="-9dp"
                 android:id="@+id/txtProductlist"
                 android:layout_width="wrap_content"
@@ -256,6 +304,7 @@
 
             <!--ชื่อร้าน-->
             <TextView
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
@@ -265,7 +314,9 @@
                 android:textStyle="bold"
                 app:fontFamily="@font/fonts1"/>
 
+            <!--android:text="ลิลลี่"-->
             <TextView
+
                 android:layout_marginTop="-9dp"
                 android:id="@+id/txtProductName"
                 android:layout_width="wrap_content"
@@ -336,15 +387,15 @@
             android:background="#CEC8C8"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-                android:layout_marginBottom="20dp"/>
+              android:layout_marginBottom="20dp"/>
             <!--Line ทำเส้น-->
 
-            <View
-                android:layout_marginTop="10dp"
-                android:background="#CEC8C8"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginBottom="20dp"/>
+            <!--<View-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:background="#CEC8C8"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:layout_marginBottom="20dp"/>-->
 
 
             <!--&lt;!&ndash;เบอร์โทร&ndash;&gt;-->

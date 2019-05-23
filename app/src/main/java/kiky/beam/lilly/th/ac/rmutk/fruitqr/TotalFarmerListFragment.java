@@ -39,31 +39,31 @@ public class TotalFarmerListFragment extends Fragment {
         createRecyclerView();
 
         //Search Controller
-        searchController();
+//        searchController();
     }
 
-    private void searchController() {
-        Button button = getView().findViewById(R.id.btnSeach1);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                MyAlertDialog myAlertDialog = new MyAlertDialog(getActivity());
-
-                EditText editText = getView().findViewById(R.id.edtSearch1);
-                search = editText.getText().toString().trim();
-                if (search.isEmpty()) {
-                    myAlertDialog.normalDialog("มีช่องว่าง", "ค้นหาห้ามมีช่องว่าง");
-                } else {
-
-                    createRecyclerView();
-
-                }
-
-            }
-        });
-
-    }
+//    private void searchController() {
+//        Button button = getView().findViewById(R.id.btnSeach1);
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                MyAlertDialog myAlertDialog = new MyAlertDialog(getActivity());
+//
+//                EditText editText = getView().findViewById(R.id.edtSearch1);
+//                search = editText.getText().toString().trim();
+//                if (search.isEmpty()) {
+//                    myAlertDialog.normalDialog("มีช่องว่าง", "ค้นหาห้ามมีช่องว่าง");
+//                } else {
+//
+//                    createRecyclerView();
+//
+//                }
+//
+//            }
+//        });
+//
+//    }
 
     private void createRecyclerView() {
         RecyclerView recyclerView = getView().findViewById(R.id.recyclerTotalFruit);

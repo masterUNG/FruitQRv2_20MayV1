@@ -111,13 +111,13 @@ public class ShowProductFragment extends Fragment {
             nameeTextView.setText(productStringArrayList.get(5));
 
 
-//          Amount Product
-            TextView productamountTextView = getView().findViewById(R.id.txtProductAmount);
-            productamountTextView.setText(productStringArrayList.get(8));
-
-//          Unit Product
-            TextView productunitTextView = getView().findViewById(R.id.txtProductUnit);
-            productunitTextView.setText(productStringArrayList.get(9));
+////          Amount Product
+//            TextView productamountTextView = getView().findViewById(R.id.txtProductAmount);
+//            productamountTextView.setText(productStringArrayList.get(8));
+//
+////          Unit Product
+//            TextView productunitTextView = getView().findViewById(R.id.txtProductUnit);
+//            productunitTextView.setText(productStringArrayList.get(9));
 
 //          Date Product
             TextView productdateTextView = getView().findViewById(R.id.txtProductdate);
