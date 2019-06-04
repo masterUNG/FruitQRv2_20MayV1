@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".TypeFruitFragment">
+
+    <!--Content-->
+    <ScrollView
+        android:layout_above="@id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--<TextView-->
+            <!--android:layout_width="400dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="left"-->
+            <!--android:text="รายการผลผลิต"-->
+            <!--android:textColor="#000000"-->
+            <!--android:textSize="33dp"-->
+            <!--app:fontFamily="@font/fonts1" />-->
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="712dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="เพิ่มผลไม้ :"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/fonts1" />
+
+                <EditText
+                    android:id="@+id/txtFarmerLog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-8dp"
+                    android:hint="ชื่อผลไม้ เช่น มะม่วง"
+                    android:textColor="#000000"
+                    android:textSize="30dp"
+                    app:fontFamily="@font/fonts1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="เพิ่มหน่วยนับ :"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/fonts1" />
+
+                <EditText
+                    android:id="@+id/txtUnit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-8dp"
+                    android:hint="หน่วยนับ เช่น กิโลกรัม"
+                    android:textColor="#000000"
+                    android:textSize="30dp"
+                    app:fontFamily="@font/fonts1" />
+
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <!--Button Add-->
+    <Button
+        android:background="@drawable/tabsave"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btnSave"
+        android:text="บันทึก"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

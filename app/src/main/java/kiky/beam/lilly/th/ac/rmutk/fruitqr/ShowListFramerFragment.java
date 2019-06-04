@@ -3,6 +3,7 @@ package kiky.beam.lilly.th.ac.rmutk.fruitqr;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -212,11 +213,14 @@ public class ShowListFramerFragment extends Fragment {
             Log.d("7April", "result ==> " + result);
 
             JSONArray jsonArray = new JSONArray(result);
-            ArrayList<String> nameStringArrayList = new ArrayList<>();
-            ArrayList<String> amountStringArrayList = new ArrayList<>();
-            ArrayList<String> dateStringArrayList = new ArrayList<>();
+            final ArrayList<String> nameStringArrayList = new ArrayList<>();
+            final ArrayList<String> amountStringArrayList = new ArrayList<>();
+            final ArrayList<String> dateStringArrayList = new ArrayList<>();
+            final ArrayList<String> idDetailFarmerStringArratList = new ArrayList<>();
 
             ArrayList<String> nameOwnerStringArrayList = new ArrayList<>();
+
+
 
             for (int i = 0; i < jsonArray.length(); i += 1) {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
@@ -224,7 +228,10 @@ public class ShowListFramerFragment extends Fragment {
                 amountStringArrayList.add(jsonObject.getString("Amount")+ " " +jsonObject.getString("Unit"));
                 dateStringArrayList.add(jsonObject.getString("Date"));
 
+                idDetailFarmerStringArratList.add(jsonObject.getString("id"));
                 nameOwnerStringArrayList.add(findNameOwer(jsonObject.getString("idRecord")));
+
+
             }
 
             Log.d("7April", "name ==>>> " + nameStringArrayList.toString());
@@ -239,8 +246,14 @@ public class ShowListFramerFragment extends Fragment {
                     amountStringArrayList, dateStringArrayList, nameOwnerStringArrayList, new OnClickItem() {//กด ctrl+p
                 @Override
                 public void onClickitem(View view, int position) {
+                    Log.d("18AprilV1", "Position ==> " + position);
+
+                    Intent intent = new Intent(getActivity(), FarmerActivity.class);
+                    intent.putExtra("idFarmer", idDetailFarmerStringArratList.get(position));
+                    startActivity(intent);
 
                 }
+
             });
             recyclerView.setAdapter(showListFramerAdapter);
 

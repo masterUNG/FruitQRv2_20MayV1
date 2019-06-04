@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".AddFramerFragment">
+    tools:context=".AdminLotFruitFragment">
+
 
 
     <!--Content-->
@@ -38,55 +39,16 @@
                 android:layout_marginRight="30dp"
                 android:orientation="vertical">
 
+                <!--<TextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:background="@color/colorPrimary"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="รายการจัดการรอบซื้อ/ขาย"-->
+                    <!--android:textColor="#ffffff"-->
+                    <!--android:textSize="33dp"-->
+                    app:fontFamily="@font/fonts1" />
 
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <!-- android:inputType="number" ใส่ได้แค่ตัวเเลข-->
-
-                    <Spinner
-                        android:id="@+id/spinnerFruit"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="4"
-                        android:textSize="20dp"
-                        app:fontFamily="@font/fonts1" />
-
-                    <Button
-                        android:background="@drawable/tabaddfruit"
-                        android:layout_alignParentBottom="true"
-                        android:id="@+id/btnSpinner"
-                        android:text=""
-                        android:layout_width="70dp"
-                        android:layout_height="40dp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <!-- android:inputType="number" ใส่ได้แค่ตัวเเลข-->
-                    <EditText
-                        android:id="@+id/edtAmount"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="จำนวน "
-                        android:inputType="number"
-                        android:textSize="24dp"
-                        app:fontFamily="@font/fonts1" />
-
-                    <Spinner
-                        android:id="@+id/spinnerUnit"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
-                        app:fontFamily="@font/fonts1" />
-
-                </LinearLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -98,13 +60,13 @@
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@+id/txtShowDate"
                         android:layout_marginBottom="40dp"
-                        android:text="วันที่รับซื้อ :"
+                        android:text="วันที่เริ่มต้น:"
                         android:textSize="24dp"
                         android:textStyle="bold"
                         app:fontFamily="@font/fonts1" />
 
                     <TextView
-                        android:id="@+id/txtShowDate"
+                        android:id="@+id/txtShowDatee"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="32dp"
@@ -116,7 +78,7 @@
                     <!--android:paddingTop="80dp"-->
 
                     <Button
-                        android:id="@+id/btnSetDate"
+                        android:id="@+id/btnSetDatee"
                         android:layout_width="75dp"
                         android:layout_height="70dp"
                         android:layout_alignParentRight="true"
@@ -131,21 +93,20 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:visibility="gone">
+                    android:layout_marginTop="10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@+id/txtShowDate2"
                         android:layout_marginBottom="40dp"
-                        android:text="วันที่ส่งผลผลิต :"
+                        android:text="วันที่สิ้นสุด :"
                         android:textSize="24dp"
                         android:textStyle="bold"
                         app:fontFamily="@font/fonts1" />
 
                     <TextView
-                        android:id="@+id/txtShowDate2"
+                        android:id="@+id/txtShowDatee2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="32dp"
@@ -157,7 +118,7 @@
                     <!--android:paddingTop="80dp"-->
 
                     <Button
-                        android:id="@+id/btnSetDate2"
+                        android:id="@+id/btnSetDatee2"
                         android:layout_width="75dp"
                         android:layout_height="70dp"
                         android:layout_alignParentRight="true"
@@ -169,37 +130,36 @@
 
                 </RelativeLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <!-- android:inputType="number" ใส่ได้แค่ตัวเเลข-->
-
-                    <Spinner
-                        android:layout_marginTop="15dp"
-                        android:id="@+id/spinnername"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="4"
-                        android:textSize="20dp"
-                        app:fontFamily="@font/fonts1" />
-
-
-
-
-                </LinearLayout>
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:text="กำหนดรุ่น/รอบผลผลิต :"
+                    android:text="ชื่อผลไม้ :"
                     android:textSize="24dp"
                     android:textStyle="bold"
                     app:fontFamily="@font/fonts1" />
 
                 <EditText
-                    android:hint="ตัวอย่าง : 1/62 "
+                    android:hint="ชื่อผลไม้ : ส้ม"
+                    android:id="@+id/txtFruit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-8dp"
+                    android:textColor="#000000"
+                    android:textSize="30dp"
+                    app:fontFamily="@font/fonts1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="จำนวน :"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/fonts1" />
+
+                <EditText
+                    android:hint="จำนวน เช่น 5 "
                     android:id="@+id/txtFarmerLog"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -207,6 +167,45 @@
                     android:textColor="#000000"
                     android:textSize="30dp"
                     app:fontFamily="@font/fonts1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="หน่วยนับ :"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/fonts1" />
+
+                <EditText
+                    android:hint="หน่วยนับ เช่น กิโลกรัม"
+                    android:id="@+id/txtUnit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-8dp"
+                    android:textColor="#000000"
+                    android:textSize="30dp"
+                    app:fontFamily="@font/fonts1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="รุ่น :"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/fonts1" />
+
+                <EditText
+                    android:hint="รุ่น เช่น มีด 1  "
+                    android:id="@+id/txtlot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-8dp"
+                    android:textColor="#000000"
+                    android:textSize="30dp"
+                    app:fontFamily="@font/fonts1" />
+
 
 
 

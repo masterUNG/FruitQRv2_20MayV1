@@ -100,8 +100,8 @@ public class DetailMemberFragment extends Fragment {
             TextView typeuserTextView = getView().findViewById(R.id.txtType);
             typeuserTextView.setText(typeUserSting);
 
-//            TextView addcontactTextView = getView().findViewById(R.id.txtaddcontact);
-//            addcontactTextView.setText(stringArrayList.get(9));
+            TextView addcontactTextView = getView().findViewById(R.id.txtaddcontact);
+            addcontactTextView.setText(stringArrayList.get(9));
 
         } catch (Exception e) {
             e.printStackTrace();

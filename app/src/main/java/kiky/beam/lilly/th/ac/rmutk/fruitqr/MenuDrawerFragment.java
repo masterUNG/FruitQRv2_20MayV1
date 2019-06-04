@@ -1,10 +1,12 @@
 package kiky.beam.lilly.th.ac.rmutk.fruitqr;
 
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -27,11 +29,13 @@ public class MenuDrawerFragment extends Fragment {
     private int[] iconAdmin = {
             R.drawable.ic_action_home,
             R.drawable.ic_action_qrb,
-            R.drawable.ic_action_listframer,
-            R.drawable.ic_action_listframer,
             R.drawable.ic_action_framer,
             R.drawable.ic_action_listframer,
-            R.drawable.ic_action_product,
+            R.drawable.ic_action_listframer,
+//            R.drawable.ic_action_time,
+            R.drawable.ic_action_listframer,
+            R.drawable.ic_action_listframer,
+//            R.drawable.ic_action_product,
             R.drawable.ic_action_addregister,
             R.drawable.ic_action_register,
             R.drawable.ic_action_manual,
@@ -41,11 +45,13 @@ public class MenuDrawerFragment extends Fragment {
     private String[] titleAdmin = {
             "หน้าหลัก",
             "สแกน QR Code",
-            "รายการผลผลิต",
+            "รับซื้อผลผลิต",
+            "รายการรวมผลผลิต",
             "รายละเอียดผลผลิต",
-            "เพิ่มผลผลิต",
-            "รายการผลิตภัณฑ์",
-            "เพิ่มผลิตภัณฑ์",
+//            "กำหนดรุ่น/รอบผลผลิต",
+            "รายละเอียดผลิตภัณฑ์",
+            "รายการผลิตภัณฑ์ QR Code",
+//            "เพิ่มผลิตภัณฑ์",
             "เพิ่มสมาชิก",
             "สมาชิก",
             "คู่มือการใช้งาน",
@@ -57,8 +63,8 @@ public class MenuDrawerFragment extends Fragment {
     private int[] iconFramer = {
             R.drawable.ic_action_home,
             R.drawable.ic_action_qrb,
-            R.drawable.ic_action_listframer,
             R.drawable.ic_action_framer,
+            R.drawable.ic_action_listframer,
             R.drawable.ic_action_register,
             R.drawable.ic_action_manual,
             R.drawable.ic_action_aboutme,
@@ -67,8 +73,8 @@ public class MenuDrawerFragment extends Fragment {
     private String[] titleFramer = {
             "หน้าหลัก",
             "สแกน QR Code",
-            "รายการผลผลิต",
             "เพิ่มรายการผลผลิต",
+            "รายละเอียดผลผลิต",
             "ข้อมูลส่วนตัว",
             "คู่มือการใช้งาน",
             "เกี่ยวกับเรา",
@@ -78,8 +84,8 @@ public class MenuDrawerFragment extends Fragment {
     private int[] iconProduce = {
             R.drawable.ic_action_home,
             R.drawable.ic_action_qrb,
-            R.drawable.ic_action_listframer,
             R.drawable.ic_action_framer,
+            R.drawable.ic_action_listframer,
             R.drawable.ic_action_register,
             R.drawable.ic_action_manual,
             R.drawable.ic_action_aboutme,
@@ -88,8 +94,8 @@ public class MenuDrawerFragment extends Fragment {
     private String[] titleProduct = {
             "หน้าหลัก",
             "สแกน QR Code",
-            "รายการผลิตภัณฑ์",
-            "เพิ่มรายการผลิตภัณฑ์",
+            "เพิ่มผลิตภัณฑ์",
+            "รายละเอียดผลิตภัณฑ์",
             "ข้อมูลส่วนตัว",
             "คู่มือการใช้งาน",
             "เกี่ยวกับเรา",
@@ -219,7 +225,16 @@ public class MenuDrawerFragment extends Fragment {
 
                 break;
 
+
+//              เพิ่มรายการผลผลิต
             case 2:
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contentServiceFragment,new AddFramerFragment()).commit();
+                break;
+
+            case 3:
 
                 getActivity()
                         .getSupportFragmentManager()
@@ -229,7 +244,7 @@ public class MenuDrawerFragment extends Fragment {
                 break;
 
 //              รายการผลผลิต
-            case 3:
+            case 4:
                 getActivity()
                         .getSupportFragmentManager()
                         .beginTransaction()
@@ -237,29 +252,39 @@ public class MenuDrawerFragment extends Fragment {
 
                 break;
 
-//              เพิ่มรายการผลผลิต
-            case 4:
+
+
+//                กำหนดรุ่น/รอบ
+//            case 5:
+//                getActivity()
+//                        .getSupportFragmentManager()
+//                        .beginTransaction()
+//                        .replace(R.id.contentServiceFragment,new AdminLotFruitFragment()).commit();
+//                break;
+
+//              รายการผลิตภัณฑ์
+            case 5:
                 getActivity()
                         .getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.contentServiceFragment,new AddFramerFragment()).commit();
+                        .replace(R.id.contentServiceFragment,new ShowListProductFragment2()).commit();
                 break;
 
-//                รายการผลิตภัณฑ์
-            case 5:
+//                รายการผลิตภัณฑ์แบบที่สแกนให้ลูกค้าดู
+            case 6:
                 getActivity()
                         .getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.contentServiceFragment,new ShowListProductFragment()).commit();
                 break;
 
-//                เพิ่มรายการผลิตภัณฑ์
-            case 6:
-                getActivity()
-                        .getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.contentServiceFragment,new AddProductFragment()).commit();
-                break;
+////                เพิ่มรายการผลิตภัณฑ์
+//            case 7:
+//                getActivity()
+//                        .getSupportFragmentManager()
+//                        .beginTransaction()
+//                        .replace(R.id.contentServiceFragment,new AddProductFragment()).commit();
+//                break;
 
 //                เพิ่มสมาชิก
             case 7:
@@ -296,8 +321,22 @@ public class MenuDrawerFragment extends Fragment {
 
 //              ออกจากระบบ
             case 11:
-                getActivity().finish();
-                break;
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle("แจ้งเตือน..!");
+                builder.setMessage("คุณต้องการออกจากแอพพลิเคชันใช่หรือไม่");
+                builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {//ปุ่มที่1
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                }); //
+                builder.setPositiveButton("ยืนยัน", new DialogInterface.OnClickListener() {//ปุ่มที่2
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        getActivity().finish();
+                    }
+                });
+                builder.show();
         }
     }
 
@@ -319,21 +358,23 @@ public class MenuDrawerFragment extends Fragment {
                 startActivity(intent);
                 break;
 
-//              รายการผลผลิต
+//                เพิ่มผลผลิต
             case 2:
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contentServiceFragment,new FarmerOnlyFragment()).commit();
+                break;
+
+
+//              รายการผลผลิต
+            case 3:
                 getActivity()
                         .getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.contentServiceFragment,new ShowListFramerFragment()).commit();
                 break;
 
-//                เพิ่มผลผลิต
-            case 3:
-                getActivity()
-                        .getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.contentServiceFragment,new AddFramerFragment()).commit();
-                break;
 
 //                ข้อมูลส่วนตัว
             case 4:
@@ -361,8 +402,22 @@ public class MenuDrawerFragment extends Fragment {
 
 //                ออกจากระบบ
             case 7:
-                getActivity().finish();
-                break;
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle("แจ้งเตือน..!");
+                builder.setMessage("คุณต้องการออกจากแอพพลิเคชันใช่หรือไม่");
+                builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {//ปุ่มที่1
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                }); //
+                builder.setPositiveButton("ยืนยัน", new DialogInterface.OnClickListener() {//ปุ่มที่2
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        getActivity().finish();
+                    }
+                });
+                builder.show();
         }
     }
 
@@ -384,22 +439,25 @@ public class MenuDrawerFragment extends Fragment {
                 startActivity(intent);
                 break;
 
-//              รายการผลิตภัณฑ์
-            case 2:
-                getActivity()
-                        .getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.contentServiceFragment,new ShowListProductFragment()).commit();
-                break;
 
 //               เพิ่มรายการผลิตภัณฑ์
-            case 3:
+            case 2:
                 getActivity()
                         .getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.contentServiceFragment,new AddProductFragment()).commit();
 
                 break;
+
+//              รายการผลิตภัณฑ์
+            case 3:
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contentServiceFragment,new ShowListProductFragment()).commit();
+                break;
+
+
 
 //                ข้อมูลส่วนตัว
             case 4:
@@ -426,8 +484,22 @@ public class MenuDrawerFragment extends Fragment {
                 break;
 //              ออกจากระบบ
             case 7:
-                getActivity().finish();
-                break;
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle("แจ้งเตือน..!");
+                builder.setMessage("คุณต้องการออกจากแอพพลิเคชันใช่หรือไม่");
+                builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {//ปุ่มที่1
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                }); //
+                builder.setPositiveButton("ยืนยัน", new DialogInterface.OnClickListener() {//ปุ่มที่2
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        getActivity().finish();
+                    }
+                });
+                builder.show();
         }
     }
 

@@ -1,10 +1,12 @@
 package kiky.beam.lilly.th.ac.rmutk.fruitqr;
 
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,19 +52,10 @@ public class TutorialFragment extends Fragment {
             }
         });
 
-        Button button3 = getView().findViewById(R.id.iconframer);
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity()
-                        .getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.contentServiceFragment,new ShowListFramerFragment()).commit();
-            }
-        });
 
-        Button button4 = getView().findViewById(R.id.iconaddframer);
-        button4.setOnClickListener(new View.OnClickListener() {
+
+        Button button3 = getView().findViewById(R.id.iconaddframer);
+        button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getActivity()
@@ -72,8 +65,31 @@ public class TutorialFragment extends Fragment {
             }
         });
 
-        Button button5 = getView().findViewById(R.id.iconproduct);
+
+        Button button4 = getView().findViewById(R.id.iconallfarmer);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contentServiceFragment,new TotalFarmerListFragment()).commit();
+            }
+        });
+
+        Button button5 = getView().findViewById(R.id.iconframer);
         button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contentServiceFragment,new ShowListFramerFragment()).commit();
+            }
+        });
+
+        Button button6 = getView().findViewById(R.id.iconproduct);
+        button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getActivity()
@@ -83,16 +99,6 @@ public class TutorialFragment extends Fragment {
             }
         });
 
-        Button button6 = getView().findViewById(R.id.iconaddproduct);
-        button6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity()
-                        .getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.contentServiceFragment,new AddProductFragment()).commit();
-            }
-        });
 
         Button button7 = getView().findViewById(R.id.iconaddregister);
         button7.setOnClickListener(new View.OnClickListener() {
@@ -142,7 +148,22 @@ public class TutorialFragment extends Fragment {
         button11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().finish();
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle("แจ้งเตือน..!");
+                builder.setMessage("คุณต้องการออกจากแอพพลิเคชันใช่หรือไม่");
+                builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {//ปุ่มที่1
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                }); //
+                builder.setPositiveButton("ยืนยัน", new DialogInterface.OnClickListener() {//ปุ่มที่2
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        getActivity().finish();
+                    }
+                });
+                builder.show();
             }
         });
     }

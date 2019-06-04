@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".AddFramerFragment">
+    tools:context=".AdminBuyFragment">
+
 
 
     <!--Content-->
@@ -38,31 +39,23 @@
                 android:layout_marginRight="30dp"
                 android:orientation="vertical">
 
-
-
-                <LinearLayout
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <!-- android:inputType="number" ใส่ได้แค่ตัวเเลข-->
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:text="รายการจัดการซื้อผลผลิต"
+                    android:textColor="#ffffff"
+                    android:textSize="33dp"
+                    app:fontFamily="@font/fonts1" />
 
-                    <Spinner
-                        android:id="@+id/spinnerFruit"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="4"
-                        android:textSize="20dp"
-                        app:fontFamily="@font/fonts1" />
-
-                    <Button
-                        android:background="@drawable/tabaddfruit"
-                        android:layout_alignParentBottom="true"
-                        android:id="@+id/btnSpinner"
-                        android:text=""
-                        android:layout_width="70dp"
-                        android:layout_height="40dp" />
-
-                </LinearLayout>
+                <Spinner
+                    android:id="@+id/spinnerFruit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20dp"
+                    app:fontFamily="@font/fonts1" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -98,7 +91,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@+id/txtShowDate"
                         android:layout_marginBottom="40dp"
-                        android:text="วันที่รับซื้อ :"
+                        android:text="วันที่การเก็บเกี่ยว :"
                         android:textSize="24dp"
                         android:textStyle="bold"
                         app:fontFamily="@font/fonts1" />
@@ -131,8 +124,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:visibility="gone">
+                    android:layout_marginTop="10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -169,37 +161,17 @@
 
                 </RelativeLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <!-- android:inputType="number" ใส่ได้แค่ตัวเเลข-->
-
-                    <Spinner
-                        android:layout_marginTop="15dp"
-                        android:id="@+id/spinnername"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="4"
-                        android:textSize="20dp"
-                        app:fontFamily="@font/fonts1" />
-
-
-
-
-                </LinearLayout>
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:text="กำหนดรุ่น/รอบผลผลิต :"
+                    android:text="ล็อตการขนส่ง :"
                     android:textSize="24dp"
                     android:textStyle="bold"
                     app:fontFamily="@font/fonts1" />
 
                 <EditText
-                    android:hint="ตัวอย่าง : 1/62 "
+                    android:hint="ล็อตการขนส่ง ตัวอย่าง : 1 "
                     android:id="@+id/txtFarmerLog"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -141,8 +141,8 @@ public class DetailFragment extends Fragment {
 //                TextView unitTextView = getView().findViewById(R.id.txtProductUnit);
 //                unitTextView.setText(unitString);
 
-                TextView dateTextView = getView().findViewById(R.id.txtProductdate);
-                dateTextView.setText(dateString);
+//                TextView dateTextView = getView().findViewById(R.id.txtProductdate);
+//                dateTextView.setText(dateString);
 
 
 

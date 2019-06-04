@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-        android:background="@drawable/back6"
+    android:background="@drawable/back6"
     tools:context=".ShowProductFragment">
 
     <android.support.v7.widget.Toolbar
@@ -71,7 +71,7 @@
                 <!--android:layout_marginTop="10dp"-->
                 <!--android:background="#CEC8C8" />-->
 
-            <!--android:background="@drawable/tulen"-->
+            <!--android:background="@drawable/coconut"-->
             <ImageView
 
                 android:layout_marginTop="15dp"
@@ -98,16 +98,16 @@
                     android:textStyle="bold"
                     app:fontFamily="@font/fonts1"/>
 
-                <!--android:text="ทุเรียนทอด"-->
+                <!--android:text="มะพร้าวอบแห้ง"-->
                 <TextView
 
                     android:id="@+id/txtNamee"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:textColor="#000000"
                     android:textSize="26dp"
-                    app:fontFamily="@font/fonts1"/>
+                    app:fontFamily="@font/fonts1" />
 
 
 
@@ -166,6 +166,45 @@
                 <!--android:layout_width="match_parent"-->
                 <!--android:layout_height="1dp"/>-->
 
+            <!--&lt;!&ndash;วันที่&ndash;&gt;-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="15dp"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="0.5"-->
+                    <!--android:text="วันที่การผลิต  : "-->
+                    <!--android:textColor="#000000"-->
+                    <!--android:textSize="24dp"-->
+                    <!--android:textStyle="bold"-->
+                    <!--app:fontFamily="@font/fonts1"/>-->
+
+                <!--&lt;!&ndash;android:text="14/05/2019"&ndash;&gt;-->
+                <!--<TextView-->
+
+                    <!--android:id="@+id/txtProductdate"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:textColor="#000000"-->
+                    <!--android:textSize="26dp"-->
+                    <!--app:fontFamily="@font/fonts1"/>-->
+
+
+            <!--</LinearLayout>-->
+
+            <!--&lt;!&ndash;Line ทำเส้น&ndash;&gt;-->
+            <!--<View-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:background="#CEC8C8"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"/>-->
+
+
             <!--วันที่-->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -176,47 +215,8 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:text="วันที่การผลิต  : "
-                    android:textColor="#000000"
-                    android:textSize="24dp"
-                    android:textStyle="bold"
-                    app:fontFamily="@font/fonts1"/>
-
-                <!--android:text="14/05/2019"-->
-                <TextView
-
-                    android:id="@+id/txtProductdate"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="#000000"
-                    android:textSize="26dp"
-                    app:fontFamily="@font/fonts1"/>
-
-
-            </LinearLayout>
-
-            <!--Line ทำเส้น-->
-            <View
-                android:layout_marginTop="10dp"
-                android:background="#CEC8C8"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"/>
-
-
-            <!--วันที่-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:text="ล็อตการผลิต  : "
+                    android:layout_weight="0.8"
+                    android:text="รุ่น/ปีในการผลิต  : "
                     android:textColor="#000000"
                     android:textSize="24dp"
                     android:textStyle="bold"
@@ -224,14 +224,14 @@
 
                 <!--android:text="1/2019"-->
                 <TextView
-
+                    android:text="1/62"
                     android:id="@+id/txtlog"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textColor="#000000"
                     android:textSize="26dp"
-                    app:fontFamily="@font/fonts1"/>
+                    app:fontFamily="@font/fonts1" />
 
 
             </LinearLayout>
@@ -285,7 +285,7 @@
                 android:textStyle="bold"
                 app:fontFamily="@font/fonts1"/>
 
-            <!--android:text="หวาน อร่อย"-->
+            <!--android:text="อร่อย"-->
             <TextView
 
                 android:layout_marginTop="-9dp"
@@ -308,13 +308,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
-                android:text="ชื่อร้านผลิตภัณฑ์ :"
+                android:text="เจ้าของผลิตภัณฑ์ :"
                 android:textColor="#000000"
                 android:textSize="24dp"
                 android:textStyle="bold"
                 app:fontFamily="@font/fonts1"/>
 
-            <!--android:text="ลิลลี่"-->
+            <!--android:text="ร้านกรุงแก้ว"-->
             <TextView
 
                 android:layout_marginTop="-9dp"
@@ -364,7 +364,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="ชื่อสวนผลผลิต :"
+                android:text="แหล่งวัตถุดิบ :"
                 android:textColor="#000000"
                 android:textSize="24dp"
                 android:textStyle="bold"

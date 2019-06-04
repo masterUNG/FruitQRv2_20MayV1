@@ -30,19 +30,17 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AddFramerFragment extends Fragment {
+public class FarmerOnlyFragment extends Fragment {
 
     private Myconstant myconstant = new Myconstant();
-    private String idRecord, nameFruit, nameFarmer, dateString, amountString, unitString, dateoutString, farmerlogString;
+    private String idRecord, nameFruit, dateString, amountString, unitString, dateoutString, farmerlogString;
     private TextView dateTextView,date2TextView;
     private boolean nameFruitABoolean = true;
-    private boolean FarmerABoolean = true;
 
-    public AddFramerFragment() {
+    public FarmerOnlyFragment() {
         // Required empty public constructor
     }
 
@@ -65,25 +63,7 @@ public class AddFramerFragment extends Fragment {
 //        Save Controller
         saveController();
 
-        buttonfruit();
-
-        //        Create NameFarmer
-        createNameFarmer();
-
     }   // Main Method
-
-    private void buttonfruit() {
-        Button button = getView().findViewById(R.id.btnSpinner);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity()
-                        .getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.contentServiceFragment, new TypeFruitFragment()).commit();
-            }
-        });
-    }
 
 
     private void saveController() {
@@ -129,8 +109,8 @@ public class AddFramerFragment extends Fragment {
 
                 } else if (farmerlogString.isEmpty()) {//isEmpty มีการกรอกหรือป่าว
                     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                    builder.setTitle("โปรดกรอกรุ่น/รอบผลผลิต");
-                    builder.setMessage("กรุณากรอกรุ่น/รอบผลผลิต");
+                    builder.setTitle("โปรดกรอกรอบการเก็บเกี่ยว");
+                    builder.setMessage("กรุณากรอกรอบการเก็บเกี่ยว");
                     builder.setPositiveButton("ยืนยัน", new DialogInterface.OnClickListener() {//ปุ่มที่2
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -160,16 +140,16 @@ public class AddFramerFragment extends Fragment {
 
     private void comfirmUpload() { //ป็อบอัพ
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("โปรดยืนยันข้อมูล");
+        builder.setTitle("Please Comfirm Data");
         builder.setMessage("ชื่อผลผลิต = " + nameFruit + "\n" + "ราคา = " + amountString + " " + unitString + "\n" + "วันที่เก็บเกี่ยว = "+ dateString +
-                "\n" + "รุ่น/รอบผลผลิต = "+ farmerlogString); //+ "วันที่ส่งผลผลิต = "+ dateoutString +  "\n"
-        builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {//ปุ่มที่1
+                "\n" + "วันที่ส่งผลผลิต = "+ dateoutString +  "\n" + "รอบการเก็บเกี่ยว = "+ farmerlogString);
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {//ปุ่มที่1
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
             }
         }); //
-        builder.setPositiveButton("ยืนยัน", new DialogInterface.OnClickListener() {//ปุ่มที่2
+        builder.setPositiveButton("Comfirm", new DialogInterface.OnClickListener() {//ปุ่มที่2
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 uploadToServer();
@@ -182,25 +162,6 @@ public class AddFramerFragment extends Fragment {
     private void uploadToServer() {
 
         try {
-
-            GetDataWhereOneColumn getDataWhereOneColumn = new GetDataWhereOneColumn(getActivity());
-            getDataWhereOneColumn.execute("NameFruit", nameFruit.trim(), myconstant.getUrlGetTypeTruitWhereNameFruid());
-            String response = getDataWhereOneColumn.get();
-            Log.d("20MayV2", "response ==> " + response);
-
-            JSONArray jsonArray = new JSONArray(response);
-            JSONObject jsonObject = jsonArray.getJSONObject(0);
-            String amountString2 = jsonObject.getString("Amount");
-
-            int amountInt = Integer.parseInt(amountString2) + Integer.parseInt(amountString);
-            String amountCurrent = Integer.toString(amountInt);
-
-            EditDataOneColumnThread editDataOneColumnThread = new EditDataOneColumnThread(getActivity());
-            editDataOneColumnThread.execute("NameFruit", nameFruit, "Amount", amountCurrent, myconstant.getUrlEditAmountWhereNameFruit());
-            Log.d("20MayV3", "Result ==> " + getDataWhereOneColumn.get());
-
-
-
             AddDetailFramerThread addDetailFramerThread = new AddDetailFramerThread(getActivity());
             addDetailFramerThread.execute(idRecord, nameFruit, amountString, unitString,
                     dateString,dateoutString,farmerlogString, myconstant.getUrlAddDetailFramer());
@@ -244,6 +205,7 @@ public class AddFramerFragment extends Fragment {
         });
 
         //ทำให้เป็นวันที่ปัจจุบัน
+//ทำให้เป็นวันที่ปัจจุบัน
         dateTextView = getView().findViewById(R.id.txtShowDate);
         date2TextView = getView().findViewById(R.id.txtShowDate2);
 
@@ -349,29 +311,6 @@ public class AddFramerFragment extends Fragment {
         });
     }
 
-    private void createNameFarmer() {
-        final String[] strings = myconstant.getFarmer();
-
-        Spinner spinner = getView().findViewById(R.id.spinnername);
-        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, myconstant.getFarmer());
-        spinner.setAdapter(stringArrayAdapter);
-
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {//เลือก
-                nameFarmer = strings[position];
-                checkStatusfarmer(position);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {//ถ้าไม่เลือก
-                nameFarmer = strings[0];
-
-            }
-        });
-
-    }
-
     //เช็คค่า
     private void checkStatusFruit(int position) {
         if (position == 0) {
@@ -381,20 +320,11 @@ public class AddFramerFragment extends Fragment {
         }
     }
 
-    //เช็คค่า
-    private void checkStatusfarmer(int position) {
-        if (position == 0) {
-            FarmerABoolean = true;
-        } else {
-            FarmerABoolean = false;
-        }
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_framer, container, false);
+        return inflater.inflate(R.layout.fragment_farmer_only, container, false);
     }
 
 }

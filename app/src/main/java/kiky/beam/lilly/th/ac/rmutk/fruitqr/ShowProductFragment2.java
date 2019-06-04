@@ -23,7 +23,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ShowProductFragment extends Fragment {
+public class ShowProductFragment2 extends Fragment {
 
     private String idProduct;
 
@@ -33,16 +33,16 @@ public class ShowProductFragment extends Fragment {
     private Myconstant myconstant = new Myconstant(); //php
 
 
-    public ShowProductFragment() {
+    public ShowProductFragment2() {
         // Required empty public constructor
     }
 
-    public static ShowProductFragment showProductInstance(String idProduct) {
-        ShowProductFragment showProductFragment = new ShowProductFragment();
+    public static ShowProductFragment2 showProductInstance2(String idProduct) {
+        ShowProductFragment2 showProductFragment2 = new ShowProductFragment2();
         Bundle bundle = new Bundle();
         bundle.putString("idProduct", idProduct);
-        showProductFragment.setArguments(bundle);
-        return showProductFragment;
+        showProductFragment2.setArguments(bundle);
+        return showProductFragment2;
 
     }
 
@@ -84,8 +84,8 @@ public class ShowProductFragment extends Fragment {
                 Log.d("18AprilV3", "productStringArrayList[" + i + "] ==> " + productStringArrayList.get(i));
             }
 
-//            Log.d("27ApriV4", "id Sent ==> " + productStringArrayList.get(4));
-//
+            Log.d("27ApriV4", "id Sent ==> " + productStringArrayList.get(4));
+
 ////            สำหรับ Framer
 //            GetDataWhereOneColumn getDataWhereOneColumn1 = new GetDataWhereOneColumn(getActivity());
 //            getDataWhereOneColumn1.execute("id", productStringArrayList.get(4), myconstant.getUrlGetFramerWhereId()); //อยู่ในตำแหน่งที่ 4 idFramer
@@ -128,17 +128,17 @@ public class ShowProductFragment extends Fragment {
             nameeTextView.setText(productStringArrayList.get(5));
 
 
-////          Amount Product
-//            TextView productamountTextView = getView().findViewById(R.id.txtProductAmount);
-//            productamountTextView.setText(productStringArrayList.get(8));
-//
-////          Unit Product
-//            TextView productunitTextView = getView().findViewById(R.id.txtProductUnit);
-//            productunitTextView.setText(productStringArrayList.get(9));
+//          Amount Product
+            TextView productamountTextView = getView().findViewById(R.id.txtProductAmount);
+            productamountTextView.setText(productStringArrayList.get(8));
+
+//          Unit Product
+            TextView productunitTextView = getView().findViewById(R.id.txtProductUnit);
+            productunitTextView.setText(productStringArrayList.get(9));
 
 //          Date Product
-//            TextView productdateTextView = getView().findViewById(R.id.txtProductdate);
-//            productdateTextView.setText(productStringArrayList.get(10));
+            TextView productdateTextView = getView().findViewById(R.id.txtProductdate);
+            productdateTextView.setText(productStringArrayList.get(10));
 
 //          List Product
             TextView productlistTextView = getView().findViewById(R.id.txtProductlist);
@@ -170,7 +170,7 @@ public class ShowProductFragment extends Fragment {
 //          Amount Fruit
 //            TextView fruitamountTextView = getView().findViewById(R.id.txtFruitAmount);
 //            fruitamountTextView.setText(framerStringArrayList.get(3));
-
+//
 //          Unit Fruit
 //            TextView fruitunitTextView = getView().findViewById(R.id.txtFruitUnit);
 //            fruitunitTextView.setText(framerStringArrayList.get(4));
@@ -199,11 +199,11 @@ public class ShowProductFragment extends Fragment {
     }
 
     private void createToolbar() {
-        Toolbar toolbar = getView().findViewById(R.id.toolbarProduct);
-        ((ProductActivity) getActivity()).setSupportActionBar(toolbar);
-        ((ProductActivity) getActivity()).getSupportActionBar().setTitle(titleToolbar);
-        ((ProductActivity) getActivity()).getSupportActionBar().setHomeButtonEnabled(true); //สร้างปุ่ม
-        ((ProductActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Toolbar toolbar = getView().findViewById(R.id.toolbarProduct2);
+        ((ProductActivity2) getActivity()).setSupportActionBar(toolbar);
+        ((ProductActivity2) getActivity()).getSupportActionBar().setTitle(titleToolbar);
+        ((ProductActivity2) getActivity()).getSupportActionBar().setHomeButtonEnabled(true); //สร้างปุ่ม
+        ((ProductActivity2) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -216,7 +216,7 @@ public class ShowProductFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_show_product, container, false);
+        return inflater.inflate(R.layout.fragment_show_product_2, container, false);
     }
 
 }

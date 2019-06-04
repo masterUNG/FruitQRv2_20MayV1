@@ -50,14 +50,6 @@
             android:scaleType="fitXY"
             android:src="@drawable/backfruit" />
 
-        <TextView
-            android:layout_marginLeft="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="42dp"
-            android:text="เมนู :"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:fontFamily="@font/fonts1" />
 
         <FrameLayout
             android:layout_marginLeft="8dp"

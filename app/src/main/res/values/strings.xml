@@ -11,5 +11,6 @@
     <string name="open">Qpen Drawer</string>
 
     <string name="close">Close Drawer</string>
+    <string name="title_activity_farmer">FarmerActivity</string>
 
 </resources>

@@ -108,14 +108,14 @@
                     app:fontFamily="@font/fonts1"/>
 
                 <Button
-                    android:id="@+id/iconframer"
+                    android:id="@+id/iconaddframer"
                     android:layout_marginBottom="1dp"
                     android:layout_marginTop="1dp"
                     android:layout_marginRight="15dp"
                     android:layout_width="1dp"
                     android:layout_height="84dp"
                     android:layout_weight="0.4"
-                    android:background="@drawable/iconframer"
+                    android:background="@drawable/iconaddframer"
                     android:textSize="24dp"
                     android:textStyle="bold"
                     app:fontFamily="@font/fonts1" />
@@ -129,14 +129,33 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/iconaddframer"
+                    android:id="@+id/iconallfarmer"
                     android:layout_marginBottom="1dp"
                     android:layout_marginTop="1dp"
                     android:layout_marginLeft="15dp"
                     android:layout_width="1dp"
                     android:layout_height="84dp"
                     android:layout_weight="0.5"
-                    android:background="@drawable/iconaddframer"
+                    android:background="@drawable/iconallfarmer"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/fonts1" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:textColor="#000000"
+                    app:fontFamily="@font/fonts1"/>
+
+                <Button
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginTop="1dp"
+                    android:id="@+id/iconframer"
+                    android:background="@drawable/iconframer"
+                    android:layout_width="1dp"
+                    android:layout_height="84dp"
+                    android:layout_weight="0.5"
                     android:textSize="24dp"
                     android:textStyle="bold"
                     app:fontFamily="@font/fonts1" />
@@ -152,6 +171,7 @@
                     android:layout_marginBottom="1dp"
                     android:layout_marginTop="1dp"
                     android:id="@+id/iconproduct"
+                    android:layout_marginRight="15dp"
                     android:background="@drawable/iconproduct"
                     android:layout_width="1dp"
                     android:layout_height="84dp"
@@ -160,27 +180,9 @@
                     android:textStyle="bold"
                     app:fontFamily="@font/fonts1" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.1"
-                    android:textColor="#000000"
-                    app:fontFamily="@font/fonts1"/>
-
-                <Button
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginTop="1dp"
-                    android:id="@+id/iconaddproduct"
-                    android:layout_marginRight="15dp"
-                    android:background="@drawable/iconaddproduct"
-                    android:layout_width="1dp"
-                    android:layout_height="84dp"
-                    android:layout_weight="0.5"
-                    android:textSize="24dp"
-                    android:textStyle="bold"
-                    app:fontFamily="@font/fonts1" />
-
             </LinearLayout>
+
+
 
             <LinearLayout
             android:layout_width="match_parent"

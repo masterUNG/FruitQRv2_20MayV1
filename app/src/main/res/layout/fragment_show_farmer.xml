@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".ShowFarmerFragment">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarFarmerr"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"/>
+
+    <!--Content-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.40"
+                    android:text="ชื่อผลไม้ : "
+                    android:textColor="#000000"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/fonts1"/>
+
+                <!--android:text="ทุเรียนทอด"-->
+                <TextView
+                    android:text="มะม่วง"
+                    android:id="@+id/txtNamee"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="26dp"
+                    app:fontFamily="@font/fonts1"/>
+
+
+
+            </LinearLayout>
+
+            <!--Line ทำเส้น-->
+            <View
+                android:layout_marginTop="10dp"
+                android:background="#CEC8C8"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="จำนวน : "
+                    android:textColor="#000000"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/fonts1"/>
+
+
+                <TextView
+                    android:text="20"
+                    android:id="@+id/txtAmount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:textColor="#000000"
+                    android:textSize="26dp"
+                    app:fontFamily="@font/fonts1"/>
+
+                <TextView
+                    android:text="กิโลกรัม"
+                    android:id="@+id/txtUnit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:textColor="#000000"
+                    android:textSize="26dp"
+                    app:fontFamily="@font/fonts1"/>
+
+
+
+            </LinearLayout>
+            <!--Line ทำเส้น-->
+            <View
+                android:layout_marginTop="10dp"
+                android:background="#CEC8C8"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:text="วันที่การเก็บเกี่ยว : "
+                    android:textColor="#000000"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/fonts1"/>
+
+
+                <TextView
+                    android:text="6/3/2019"
+                    android:id="@+id/txtDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="26dp"
+                    app:fontFamily="@font/fonts1"/>
+
+
+
+            </LinearLayout>
+
+            <!--Line ทำเส้น-->
+            <View
+                android:layout_marginTop="10dp"
+                android:background="#CEC8C8"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:text="วันที่ส่งผลผลิต : "
+                    android:textColor="#000000"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/fonts1"/>
+
+
+                <TextView
+                    android:text="6/3/2019"
+                    android:id="@+id/txtDate2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="26dp"
+                    app:fontFamily="@font/fonts1"/>
+
+
+
+            </LinearLayout>
+
+            <!--Line ทำเส้น-->
+            <View
+                android:layout_marginTop="10dp"
+                android:background="#CEC8C8"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:text="รอบการเก็บเกี่ยว : "
+                    android:textColor="#000000"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/fonts1"/>
+
+
+                <TextView
+                    android:text="1"
+                    android:id="@+id/txtLot"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="26dp"
+                    app:fontFamily="@font/fonts1"/>
+
+
+
+            </LinearLayout>
+
+            <!--Line ทำเส้น-->
+            <View
+                android:layout_marginTop="10dp"
+                android:background="#CEC8C8"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.60"
+                    android:text="เจ้าของผลผลิต : "
+                    android:textColor="#000000"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/fonts1"/>
+
+
+                <TextView
+                    android:text="สวนกวาง"
+                    android:id="@+id/txtuser"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="26dp"
+                    app:fontFamily="@font/fonts1"/>
+
+
+
+            </LinearLayout>
+
+            <!--Line ทำเส้น-->
+            <View
+                android:layout_marginTop="10dp"
+                android:background="#CEC8C8"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.60"
+                    android:text="เบอร์โทรศัพท์ : "
+                    android:textColor="#000000"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/fonts1"/>
+
+
+                <TextView
+                    android:text="1"
+                    android:id="@+id/txtphone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="26dp"
+                    app:fontFamily="@font/fonts1"/>
+
+
+
+            </LinearLayout>
+
+            <!--Line ทำเส้น-->
+            <View
+                android:layout_marginTop="10dp"
+                android:background="#CEC8C8"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.60"
+                    android:text="ช่องการติดต่อ : "
+                    android:textColor="#000000"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/fonts1"/>
+
+
+                <TextView
+                    android:text="1"
+                    android:id="@+id/txtaddcontect"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="26dp"
+                    app:fontFamily="@font/fonts1"/>
+
+
+
+            </LinearLayout>
+
+            <!--Line ทำเส้น-->
+            <View
+                android:layout_marginTop="10dp"
+                android:background="#CEC8C8"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/imvImage"
+                android:layout_width="147dp"
+                android:layout_height="114dp"
+                android:layout_gravity="center"
+                android:layout_margin="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/farmer1"
+                android:scaleType="centerInside" />
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
