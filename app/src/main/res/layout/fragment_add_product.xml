@@ -26,6 +26,8 @@
                 android:layout_height="wrap_content"
                 app:fontFamily="@font/fonts1"/>
 
+
+
             <android.support.v7.widget.RecyclerView
                 android:id="@id/recyclerFramer"
                 android:layout_width="match_parent"
@@ -41,7 +43,32 @@
                 android:layout_height="wrap_content"
                 app:fontFamily="@font/fonts1"/>
 
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_weight="1"
+                    android:id="@+id/edtAmount"
+                    android:inputType="number"
+                    android:hint="จำนวน"
+                    android:textSize="24dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:fontFamily="@font/fonts1"/>
+
+                <Spinner
+                    android:layout_weight="1"
+                    android:id="@+id/spnUnit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:fontFamily="@font/fonts1"/>
+
+            </LinearLayout>
+
             <EditText
+                android:layout_marginTop="10dp"
                 android:inputType="text"
                 android:id="@+id/edtProduct"
                 android:hint="ชื่อของผลิตภัณฑ์"
@@ -76,7 +103,7 @@
 
                 <EditText
                     android:layout_weight="1"
-                    android:id="@+id/edtAmount"
+                    android:id="@+id/edtAmountPd"
                     android:inputType="number"
                     android:hint="จำนวน"
                     android:textSize="24dp"
@@ -86,7 +113,7 @@
 
                 <Spinner
                     android:layout_weight="1"
-                    android:id="@+id/spnUnit"
+                    android:id="@+id/spnUnitPd"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     app:fontFamily="@font/fonts1"/>

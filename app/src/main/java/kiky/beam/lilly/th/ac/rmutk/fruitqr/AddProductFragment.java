@@ -54,7 +54,7 @@ import it.sauronsoftware.ftp4j.FTPDataTransferListener;
 public class AddProductFragment extends Fragment {
     private Myconstant myconstant = new Myconstant();
     private String idRecord, NameRecord, TypeRecord, amountTypeFruitString = "",
-            idTypeFruid = "", Name, Detail, Image = "https://www.androidthai.in.th/rmutk/Picture/product.png", Amount, Unit, Date, QRcode;
+            idTypeFruid = "", Name, Detail, Image = "https://www.androidthai.in.th/rmutk/Picture/product.png", Amount, Unit, Date, QRcode, AmountPd, UnitPd;
 
     private ImageView imageView;
     private Uri uri;
@@ -130,8 +130,12 @@ public class AddProductFragment extends Fragment {
 
     private void unitController() {
         final Spinner spinner = getView().findViewById(R.id.spnUnit);
+        final Spinner spinner1 = getView().findViewById(R.id.spnUnitPd);
         final String[] strings = myconstant.getUnits();
+
         Unit = strings[0];
+        UnitPd = strings[0];
+
         ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<>(getActivity(),
                 android.R.layout.simple_list_item_1, strings);
         spinner.setAdapter(stringArrayAdapter);
@@ -146,7 +150,22 @@ public class AddProductFragment extends Fragment {
                 Unit = strings[0];
             }
         });
+
+        spinner1.setAdapter(stringArrayAdapter);
+        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                UnitPd = strings[position];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) { UnitPd = strings[0];
+
+            }
+        });
     }
+
+
 
     private void dateController() {
         Button button = getView().findViewById(R.id.btnSetDate);
@@ -194,6 +213,9 @@ public class AddProductFragment extends Fragment {
                 EditText amountEditText = getView().findViewById(R.id.edtAmount);
                 Amount = amountEditText.getText().toString().trim();
 
+                EditText amountpdEditText = getView().findViewById(R.id.edtAmountPd);
+                AmountPd = amountpdEditText.getText().toString().trim();
+
 
                 MyAlertDialog myAlertDialog = new MyAlertDialog(getActivity());
                 if (idTypeFruid.length() == 0) {
@@ -233,6 +255,18 @@ public class AddProductFragment extends Fragment {
                     builder.show();
 
                 } else if (Amount.isEmpty()) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setTitle("ไม่มีจำนวนผลผลิต");
+                    builder.setMessage("กรุณาพิมพ์จำนวน");
+                    builder.setPositiveButton("ยืนยัน", new DialogInterface.OnClickListener() {//ปุ่มที่2
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    builder.show();
+
+                } else if (AmountPd.isEmpty()) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                     builder.setTitle("ไม่มีจำนวนผลิตภัณฑ์");
                     builder.setMessage("กรุณาพิมพ์จำนวน");
@@ -330,7 +364,7 @@ public class AddProductFragment extends Fragment {
             //อัพโหลด
             AddDetailProductThread addDetailProductThread = new AddDetailProductThread(getActivity());
             addDetailProductThread.execute(idRecord, NameRecord, TypeRecord, idTypeFruid, Name,
-                    Detail, Image, Amount, Unit, Date, QRcode, myconstant.getUrlAddDetailProduct());
+                    Detail, Image, Amount, Unit, Date, QRcode, AmountPd, UnitPd, myconstant.getUrlAddDetailProduct());
             String result = addDetailProductThread.get();
 
             if (Boolean.parseBoolean(result)) {

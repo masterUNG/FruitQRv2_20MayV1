@@ -9,7 +9,7 @@ public class Myconstant {
 
     private String[] farmer = {"โปรดเลือกชื่อสวน..","สวนชูติรัตน์","สวนกวาง","สวนบางปู","สวนนาเดียร์","สวนอรทัย"};
     private String[] columnDetailProduct = {"id", "idRecord", "NameRecord", "TypeRecord", "idTypeFruit",
-                                                "Name", "Detail", "Image", "Amount", "Unit", "Date", "QRcode"};
+                                                "Name", "Detail", "Image", "Amount", "Unit", "Date", "QRcode" , "AmountPd", "UnitPd"};
     private String[] columnDetailFramer = { "id", "idRecord", "Name", "Amount", "Unit", "Date", "Dateout", "FarmerLog"};
     private String[] columnUser = {"id", "Name", "FirstName", "LastName", "Address", "Phone", "User", "Password", "TypeUser" , "AddContact"};
     private String[] columnUserFarmer = {"id", "Name", "FirstName", "LastName", "Address", "Phone", "User", "Password", "TypeUser"};

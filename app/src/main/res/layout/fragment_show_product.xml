@@ -73,7 +73,7 @@
 
             <!--android:background="@drawable/coconut"-->
             <ImageView
-
+                android:background="@drawable/tulen"
                 android:layout_marginTop="15dp"
                 android:id="@+id/imvImage"
                 android:layout_width="match_parent"
@@ -99,8 +99,9 @@
                     app:fontFamily="@font/fonts1"/>
 
                 <!--android:text="มะพร้าวอบแห้ง"-->
+                <!--android:text="ทุเรียนทอด"-->
                 <TextView
-
+                    android:text="ทุเรียนทอด"
                     android:id="@+id/txtNamee"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -286,8 +287,9 @@
                 app:fontFamily="@font/fonts1"/>
 
             <!--android:text="อร่อย"-->
+            <!--android:text="หวาน อร่อย"-->
             <TextView
-
+                android:text="หวาน อร่อย"
                 android:layout_marginTop="-9dp"
                 android:id="@+id/txtProductlist"
                 android:layout_width="wrap_content"
@@ -316,7 +318,7 @@
 
             <!--android:text="ร้านกรุงแก้ว"-->
             <TextView
-
+                android:text="ร้านกรุงแก้ว"
                 android:layout_marginTop="-9dp"
                 android:id="@+id/txtProductName"
                 android:layout_width="wrap_content"

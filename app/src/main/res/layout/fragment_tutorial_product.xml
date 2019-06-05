@@ -67,7 +67,7 @@
                     android:layout_width="1dp"
                     android:layout_height="84dp"
                     android:layout_weight="0.4"
-                    android:background="@drawable/iconqrcode"
+                    android:background="@drawable/iconqr"
                     android:textSize="24dp"
                     android:textStyle="bold"
                     app:fontFamily="@font/fonts1" />
@@ -80,14 +80,14 @@
                     app:fontFamily="@font/fonts1"/>
 
                 <Button
-                    android:id="@+id/iconproduct"
+                    android:id="@+id/iconaddproduct"
                     android:layout_marginBottom="1dp"
                     android:layout_marginTop="1dp"
                     android:layout_marginRight="15dp"
                     android:layout_width="1dp"
                     android:layout_height="84dp"
                     android:layout_weight="0.4"
-                    android:background="@drawable/iconproduct"
+                    android:background="@drawable/iconaddproduct"
                     android:textSize="24dp"
                     android:textStyle="bold"
                     app:fontFamily="@font/fonts1" />
@@ -101,14 +101,33 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/iconaddproduct"
+                    android:id="@+id/iconproduct"
                     android:layout_marginBottom="1dp"
                     android:layout_marginTop="1dp"
                     android:layout_marginLeft="15dp"
                     android:layout_width="1dp"
                     android:layout_height="84dp"
                     android:layout_weight="0.5"
-                    android:background="@drawable/iconaddproduct"
+                    android:background="@drawable/iconproduct2"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/fonts1" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:textColor="#000000"
+                    app:fontFamily="@font/fonts1"/>
+
+                <Button
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginTop="1dp"
+                    android:id="@+id/iconlistqrcode"
+                    android:background="@drawable/iconlistqrcode"
+                    android:layout_width="1dp"
+                    android:layout_height="84dp"
+                    android:layout_weight="0.5"
                     android:textSize="24dp"
                     android:textStyle="bold"
                     app:fontFamily="@font/fonts1" />
@@ -124,27 +143,8 @@
                     android:layout_marginBottom="1dp"
                     android:layout_marginTop="1dp"
                     android:id="@+id/iconregister"
-                    android:background="@drawable/iconregister"
-                    android:layout_width="1dp"
-                    android:layout_height="84dp"
-                    android:layout_weight="0.5"
-                    android:textSize="24dp"
-                    android:textStyle="bold"
-                    app:fontFamily="@font/fonts1" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.1"
-                    android:textColor="#000000"
-                    app:fontFamily="@font/fonts1"/>
-
-                <Button
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginTop="1dp"
-                    android:id="@+id/iconmanual"
                     android:layout_marginRight="15dp"
-                    android:background="@drawable/iconmanual"
+                    android:background="@drawable/iconregister"
                     android:layout_width="1dp"
                     android:layout_height="84dp"
                     android:layout_weight="0.5"
@@ -154,7 +154,6 @@
 
             </LinearLayout>
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -162,9 +161,9 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/iconaboutme"
                     android:layout_marginBottom="1dp"
                     android:layout_marginTop="1dp"
-                    android:id="@+id/iconaboutme"
                     android:layout_marginLeft="15dp"
                     android:layout_width="1dp"
                     android:layout_height="84dp"
@@ -184,8 +183,8 @@
                 <Button
                     android:layout_marginBottom="1dp"
                     android:layout_marginTop="1dp"
-                    android:id="@+id/iconexit"
-                    android:background="@drawable/iconexit"
+                    android:id="@+id/iconmanual"
+                    android:background="@drawable/iconmanual"
                     android:layout_width="1dp"
                     android:layout_height="84dp"
                     android:layout_weight="0.5"
@@ -196,17 +195,25 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:textColor="#000000"
-                    app:fontFamily="@font/fonts1"/>
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.19"
+                    android:layout_weight="0.1"
                     android:textColor="#000000"
                     app:fontFamily="@font/fonts1"/>
 
+                <Button
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginTop="1dp"
+                    android:id="@+id/iconexit"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/iconexit"
+                    android:layout_width="1dp"
+                    android:layout_height="84dp"
+                    android:layout_weight="0.5"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/fonts1" />
+
             </LinearLayout>
+
 
 
 

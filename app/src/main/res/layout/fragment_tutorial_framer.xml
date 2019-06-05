@@ -67,7 +67,7 @@
                     android:layout_width="1dp"
                     android:layout_height="84dp"
                     android:layout_weight="0.4"
-                    android:background="@drawable/iconqrcode"
+                    android:background="@drawable/iconqr"
                     android:textSize="24dp"
                     android:textStyle="bold"
                     app:fontFamily="@font/fonts1" />

@@ -54,7 +54,29 @@ public class TutorialProductFragment extends Fragment {
             }
         });
 
-        Button button5 = getView().findViewById(R.id.iconproduct);
+        Button button3 = getView().findViewById(R.id.iconaddproduct);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contentServiceFragment,new AddProductFragment()).commit();
+            }
+        });
+
+        Button button4 = getView().findViewById(R.id.iconproduct);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contentServiceFragment,new ShowListProductFragment2()).commit();
+            }
+        });
+
+        Button button5 = getView().findViewById(R.id.iconlistqrcode);
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,19 +87,8 @@ public class TutorialProductFragment extends Fragment {
             }
         });
 
-        Button button6 = getView().findViewById(R.id.iconaddproduct);
+        Button button6 = getView().findViewById(R.id.iconregister);
         button6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity()
-                        .getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.contentServiceFragment,new AddProductFragment()).commit();
-            }
-        });
-
-        Button button8 = getView().findViewById(R.id.iconregister);
-        button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getActivity()
@@ -88,8 +99,8 @@ public class TutorialProductFragment extends Fragment {
             }
         });
 
-        Button button9 = getView().findViewById(R.id.iconmanual);
-        button9.setOnClickListener(new View.OnClickListener() {
+        Button button7 = getView().findViewById(R.id.iconmanual);
+        button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getActivity()
@@ -99,8 +110,8 @@ public class TutorialProductFragment extends Fragment {
             }
         });
 
-        Button button10 = getView().findViewById(R.id.iconaboutme);
-        button10.setOnClickListener(new View.OnClickListener() {
+        Button button8 = getView().findViewById(R.id.iconaboutme);
+        button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getActivity()
@@ -110,8 +121,8 @@ public class TutorialProductFragment extends Fragment {
             }
         });
 
-        Button button11 = getView().findViewById(R.id.iconexit);
-        button11.setOnClickListener(new View.OnClickListener() {
+        Button button9 = getView().findViewById(R.id.iconexit);
+        button9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());

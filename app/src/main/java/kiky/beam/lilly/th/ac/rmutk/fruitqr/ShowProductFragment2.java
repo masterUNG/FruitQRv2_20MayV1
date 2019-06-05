@@ -84,7 +84,7 @@ public class ShowProductFragment2 extends Fragment {
                 Log.d("18AprilV3", "productStringArrayList[" + i + "] ==> " + productStringArrayList.get(i));
             }
 
-            Log.d("27ApriV4", "id Sent ==> " + productStringArrayList.get(4));
+//            Log.d("27ApriV4", "id Sent ==> " + productStringArrayList.get(4));
 
 ////            สำหรับ Framer
 //            GetDataWhereOneColumn getDataWhereOneColumn1 = new GetDataWhereOneColumn(getActivity());
@@ -148,6 +148,17 @@ public class ShowProductFragment2 extends Fragment {
             TextView productnameTextView = getView().findViewById(R.id.txtProductName);
             productnameTextView.setText(productStringArrayList.get(2));
 
+//                      Amount Product
+            TextView amountpbTextView = getView().findViewById(R.id.txtProductAmount2);
+            amountpbTextView.setText(productStringArrayList.get(12));
+
+//          Unit Product
+            TextView productunit2TextView = getView().findViewById(R.id.txtProductUnit2);
+            productunit2TextView.setText(productStringArrayList.get(13));
+
+
+            TextView qrTextView = getView().findViewById(R.id.txtQRcode);
+           qrTextView.setText(productStringArrayList.get(11));
 //          Address Product
 //            TextView productaddressTextView = getView().findViewById(R.id.txtProductAdd);
 //            productaddressTextView.setText(userStringArrayList.get(4));

@@ -118,93 +118,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"/>
 
-            <!--&lt;!&ndash;จำนวน และ หน่วย&ndash;&gt;-->
-            <!--<LinearLayout-->
-            <!--android:layout_marginTop="15dp"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:orientation="horizontal">-->
+            <!--รายละเอียด-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="รายละเอียด :"
+                android:textColor="#000000"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                app:fontFamily="@font/fonts1"/>
 
-            <!--<TextView-->
+            <!--android:text="อร่อย"-->
+            <TextView
 
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_weight="0.6"-->
-            <!--android:text="จำนวน :"-->
-            <!--android:textColor="#000000"-->
-            <!--android:textSize="24dp"-->
-            <!--android:textStyle="bold"-->
-            <!--app:fontFamily="@font/fonts1"/>-->
-
-            <!--<TextView-->
-            <!--android:text="5"-->
-            <!--android:id="@+id/txtProductAmount"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_weight="0.3"-->
-            <!--android:textColor="#000000"-->
-            <!--android:textSize="26dp"-->
-            <!--app:fontFamily="@font/fonts1"/>-->
-
-            <!--<TextView-->
-            <!--android:text="กิโลกรัม"-->
-            <!--android:id="@+id/txtProductUnit"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_weight="1.5"-->
-            <!--android:textColor="#000000"-->
-            <!--android:textSize="26dp"-->
-            <!--app:fontFamily="@font/fonts1"/>-->
-
-            <!--</LinearLayout>-->
-
-            <!--&lt;!&ndash;Line ทำเส้น&ndash;&gt;-->
-            <!--<View-->
-            <!--android:layout_marginTop="10dp"-->
-            <!--android:background="#CEC8C8"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="1dp"/>-->
-
-            <!--&lt;!&ndash;วันที่&ndash;&gt;-->
-            <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginTop="15dp"-->
-            <!--android:orientation="horizontal">-->
-
-            <!--<TextView-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_weight="0.5"-->
-            <!--android:text="วันที่การผลิต  : "-->
-            <!--android:textColor="#000000"-->
-            <!--android:textSize="24dp"-->
-            <!--android:textStyle="bold"-->
-            <!--app:fontFamily="@font/fonts1"/>-->
-
-            <!--&lt;!&ndash;android:text="14/05/2019"&ndash;&gt;-->
-            <!--<TextView-->
-
-            <!--android:id="@+id/txtProductdate"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_weight="1"-->
-            <!--android:textColor="#000000"-->
-            <!--android:textSize="26dp"-->
-            <!--app:fontFamily="@font/fonts1"/>-->
+                android:layout_marginTop="-9dp"
+                android:id="@+id/txtProductlist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="26dp"
+                app:fontFamily="@font/fonts1"/>
+            <!--Line ทำเส้น-->
+            <View
+                android:layout_marginTop="10dp"
+                android:background="#CEC8C8"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
 
 
-            <!--</LinearLayout>-->
 
-            <!--&lt;!&ndash;Line ทำเส้น&ndash;&gt;-->
-            <!--<View-->
-            <!--android:layout_marginTop="10dp"-->
-            <!--android:background="#CEC8C8"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="1dp"/>-->
-
-
-            <!--วันที่-->
+            <!--จำนวนผลิตภัณฑ์-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -214,8 +158,8 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.8"
-                    android:text="รุ่น/ปีในการผลิต  : "
+                    android:layout_weight="0.80"
+                    android:text="จำนวนผลิตภัณฑ์  : "
                     android:textColor="#000000"
                     android:textSize="24dp"
                     android:textStyle="bold"
@@ -223,11 +167,22 @@
 
                 <!--android:text="1/2019"-->
                 <TextView
-                    android:text="1/62"
-                    android:id="@+id/txtlog"
+
+                    android:id="@+id/txtProductAmount2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="0.3"
+                    android:textColor="#000000"
+                    android:textSize="26dp"
+                    app:fontFamily="@font/fonts1" />
+
+                <!--android:text="1/2019"-->
+                <TextView
+
+                    android:id="@+id/txtProductUnit2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
                     android:textColor="#000000"
                     android:textSize="26dp"
                     app:fontFamily="@font/fonts1" />
@@ -242,7 +197,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"/>
 
-            <!--วันที่-->
+            <!--จำำนวนผลผลิต-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -252,8 +207,8 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:text="จำนวน  : "
+                    android:layout_weight="0.70"
+                    android:text="จำนวนผลผลิต  : "
                     android:textColor="#000000"
                     android:textSize="24dp"
                     android:textStyle="bold"
@@ -289,8 +244,8 @@
                 android:layout_marginTop="10dp"
                 android:background="#CEC8C8"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"/>
-
+                android:layout_height="1dp"
+                />
             <!--วันที่-->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -332,64 +287,46 @@
 
 
             <!--วันที่-->
-            <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginTop="15dp"-->
-            <!--android:orientation="horizontal">-->
-
-            <!--<TextView-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_weight="0.7"-->
-            <!--android:text="วันที่การเก็บเกี่ยว :"-->
-            <!--android:textColor="#000000"-->
-            <!--android:textSize="24dp"-->
-            <!--android:textStyle="bold"-->
-            <!--app:fontFamily="@font/fonts1"/>-->
-
-            <!--<TextView-->
-            <!--android:id="@+id/txtFruitdate"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_weight="1"-->
-            <!--android:textColor="#000000"-->
-            <!--android:textSize="26dp"-->
-            <!--app:fontFamily="@font/fonts1"/>-->
-
-
-            <!--</LinearLayout>-->
-
-
-
-
-            <!--รายละเอียด-->
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="รายละเอียด :"
-                android:textColor="#000000"
-                android:textSize="24dp"
-                android:textStyle="bold"
-                app:fontFamily="@font/fonts1"/>
+                android:orientation="horizontal">
 
-            <!--android:text="อร่อย"-->
-            <TextView
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:text="รุ่น/ปีในการผลิต  : "
+                    android:textColor="#000000"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/fonts1"/>
 
-                android:layout_marginTop="-9dp"
-                android:id="@+id/txtProductlist"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#000000"
-                android:textSize="26dp"
-                app:fontFamily="@font/fonts1"/>
+                <!--android:text="1/2019"-->
+                <TextView
+                    android:text="1/62"
+                    android:id="@+id/txtlog"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="26dp"
+                    app:fontFamily="@font/fonts1" />
+
+
+            </LinearLayout>
+
             <!--Line ทำเส้น-->
             <View
                 android:layout_marginTop="10dp"
                 android:background="#CEC8C8"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"/>
+
+
+
+
 
             <!--ชื่อร้าน-->
             <TextView
@@ -468,7 +405,7 @@
                 android:textColor="#000000"
                 android:textSize="24dp"
                 app:fontFamily="@font/fonts1"
-                android:layout_marginBottom="20dp"/>
+/>
 
             <!--Line ทำเส้น-->
             <View
@@ -476,7 +413,35 @@
                 android:background="#CEC8C8"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginBottom="20dp"/>
+                android:layout_marginBottom="40dp"
+             />
+
+            <ImageView
+                android:scaleType="centerInside"
+                android:src="@drawable/product0001"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <TextView
+                android:id="@+id/txtQRcode"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#009688"
+                android:textStyle="bold"
+                android:textSize="24dp"
+                android:text="product0001"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontFamily="@font/fonts1"/>
+
+            <!--Line ทำเส้น-->
+            <View
+                android:layout_marginTop="10dp"
+                android:background="#CEC8C8"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="40dp"
+                />
+
             <!--Line ทำเส้น-->
 
             <!--<View-->
