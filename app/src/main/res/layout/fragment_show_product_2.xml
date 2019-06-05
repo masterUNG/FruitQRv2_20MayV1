@@ -418,7 +418,7 @@
 
             <ImageView
                 android:scaleType="centerInside"
-                android:src="@drawable/product0001"
+                android:src="@drawable/qr"
                 android:layout_width="match_parent"
                 android:layout_height="200dp" />
 

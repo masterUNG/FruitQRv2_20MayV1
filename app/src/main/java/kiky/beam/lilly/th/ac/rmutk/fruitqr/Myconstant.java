@@ -15,6 +15,10 @@ public class Myconstant {
     private String[] columnUserFarmer = {"id", "Name", "FirstName", "LastName", "Address", "Phone", "User", "Password", "TypeUser"};
 
 
+
+    private String urlGetDetailProductWhereQRcode = "https://www.androidthai.in.th/rmutk/getDetailWhereQRcode.php";
+
+
     private String urlGetFarmerFruitWhereId = "http://www.androidthai.in.th/rmutk/getFarmerFruitWhereId.php"; // หน้า ShowFarmer
 
 
@@ -69,6 +73,10 @@ public class Myconstant {
 
     private  String urlGetDetailFramerWhereIdRecordAnNameLilly = "http://www.androidthai.in.th/rmutk/getDetailFramerWhereIdRecordAnNameLilly.php";
 
+
+    public String getUrlGetDetailProductWhereQRcode() {
+        return urlGetDetailProductWhereQRcode;
+    }
 
     public String[] getFarmer() {
         return farmer;

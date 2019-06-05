@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ShowListCenterFragment">
+
+    <RelativeLayout
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+
+            android:id="@+id/edtSearch"
+            android:hint="ค้นหา : "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:fontFamily="@font/fonts1"
+            android:textSize="20dp"/>
+
+        <Button
+
+            android:id="@+id/btnSeach"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/tabfind"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fontFamily="@font/fonts1"/>
+
+    </RelativeLayout>
+
+    <RadioGroup
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:id="@+id/ragSearch"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radFruit"
+            android:checked="true"
+            android:text="ชื่อผลไม้"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fontFamily="@font/fonts1"
+            android:textSize="20dp"/>
+
+        <RadioButton
+            android:id="@+id/radGarden"
+            android:layout_marginLeft="10dp"
+            android:layout_width="89dp"
+            android:layout_height="wrap_content"
+            android:text="ชื่อสวน"
+            app:fontFamily="@font/fonts1"
+            android:textSize="20dp"/>
+
+
+    </RadioGroup>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_margin="10dp"
+        android:id="@+id/recyclerFramer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

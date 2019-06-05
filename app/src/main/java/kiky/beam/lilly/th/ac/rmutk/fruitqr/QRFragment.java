@@ -24,6 +24,7 @@ public class QRFragment extends Fragment implements ZXingScannerView.ResultHandl
     private boolean loginABoolean;
 
 
+
     public QRFragment() {
         // Required empty public constructor
     }
@@ -71,6 +72,7 @@ public class QRFragment extends Fragment implements ZXingScannerView.ResultHandl
                 .getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.contentQRfragment,DetailFragment.detailFragment(resultQRcode, loginABoolean)).commit();
+
 
         Handler handler = new Handler();  //Handler ระบบน่วงเวลา
         handler.postDelayed(new Runnable() {//postDelayed ทำให้ดีเล ช้าลง 2000=0วิ

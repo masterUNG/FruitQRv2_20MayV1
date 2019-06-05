@@ -25,8 +25,7 @@ import org.json.JSONObject;
  */
 public class DetailFragment extends Fragment {
 
-    private  String qrCode, nameString, imageString, amountString, unitString,
-            dateString, idShopString, nameShopString, addressString, phoneString;
+    private  String qrCode,nameFruitString, nameString, imageString,DetailString;
     private boolean loginABoolean;
 
     public DetailFragment() {
@@ -43,7 +42,6 @@ public class DetailFragment extends Fragment {
         return detailFragment;
 
 
-
     }
 
     //รับค่า QR เพื่อจะเอาไป where
@@ -54,10 +52,12 @@ public class DetailFragment extends Fragment {
         loginABoolean = getArguments().getBoolean("Login");
         Log.d("3FebV2", "LoginBool at Detail ==> " + loginABoolean);
 
+
 //        Create Toolbar
         createToolbar();
 
         showView();
+
 
 
     } //Main Method
@@ -86,10 +86,86 @@ public class DetailFragment extends Fragment {
 
     }
 
+//    private void showView() {
+//        qrCode = getArguments().getString("QR");
+//        if (!qrCode.isEmpty()) {
+//
+//
+////            Have QR codeValue
+//            try {
+//
+//                Myconstant myconstant = new Myconstant();
+//                GetDataWhereOneColumn getDataWhereOneColumn = new GetDataWhereOneColumn(getActivity());
+//                getDataWhereOneColumn.execute("QRcode", qrCode, myconstant.getUrlGetDetailProductWhereQRcode());
+//
+//                String json = getDataWhereOneColumn.get();
+//                Log.d("2FebV1", "json ==> " + json);
+//
+////                String json2 = getDataWhereOneColumn.get();
+////                Log.e("2FebV1", "json ==> " + json2);
+//
+//                JSONArray jsonArray = new JSONArray(json);
+//                JSONObject jsonObject = jsonArray.getJSONObject(0);
+//
+//
+//                nameString = jsonObject.getString("NameRecord");
+//
+//
+////                String nameRecordString = jsonObject.getString("NameRecord");
+////                String namefruitString = jsonObject.getString("Name");
+////                String detailString = jsonObject.getString("Detail");
+////                String imageString = jsonObject.getString("Image");
+////                String amountString = jsonObject.getString("Amount");
+////                String unitString = jsonObject.getString("Unit");
+////                String dateString = jsonObject.getString("Date");
+//
+//
+////                String imageString = jsonObject.getString("Image");
+////                String namefruitString = jsonObject.getString("Name");
+////                String amountString = jsonObject.getString("Amount");
+////                String unitString = jsonObject.getString("Unit");
+////                String dateString = jsonObject.getString("Date");
+////                String detailString = jsonObject.getString("Detail");
+////                String nameRecordString = jsonObject.getString("NameRecord");
+//
+//
+//                TextView nameTextView = getView().findViewById(R.id.txtNamee);
+//                nameTextView.setText(nameString);
+////
+////                TextView namefruitTextView = getView().findViewById(R.id.txtNamee);
+////                namefruitTextView.setText(namefruitString);
+////
+////                TextView detailTextView = getView().findViewById(R.id.txtProductlist);
+////                detailTextView.setText(detailString);
+//
+////                ImageView imageView = getView().findViewById(R.id.imvImage);
+////                Picasso.get().load(imageString).into(imageView);
+//
+////                TextView amountTextView = getView().findViewById(R.id.txtProductAmount);
+////                amountTextView.setText(amountString);
+////
+////                TextView unitTextView = getView().findViewById(R.id.txtProductUnit);
+////                unitTextView.setText(unitString);
+//
+////                TextView dateTextView = getView().findViewById(R.id.txtProductdate);
+////                dateTextView.setText(dateString);
+//
+//
+
+//
+//
+//
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//
+//
+//        }
+//    }
+
     private void showView() {
         qrCode = getArguments().getString("QRcode");
         if (!qrCode.isEmpty()) {
-
 
 //            Have QR codeValue
             try {
@@ -104,57 +180,23 @@ public class DetailFragment extends Fragment {
                 JSONArray jsonArray = new JSONArray(json);
                 JSONObject jsonObject = jsonArray.getJSONObject(0);
 
-
-                String nameRecordString = jsonObject.getString("NameRecord");
-                String namefruitString = jsonObject.getString("Name");
-                String detailString = jsonObject.getString("Detail");
-                String imageString = jsonObject.getString("Image");
-                String amountString = jsonObject.getString("Amount");
-                String unitString = jsonObject.getString("Unit");
-                String dateString = jsonObject.getString("Date");
-
-
-//                String imageString = jsonObject.getString("Image");
-//                String namefruitString = jsonObject.getString("Name");
-//                String amountString = jsonObject.getString("Amount");
-//                String unitString = jsonObject.getString("Unit");
-//                String dateString = jsonObject.getString("Date");
-//                String detailString = jsonObject.getString("Detail");
-//                String nameRecordString = jsonObject.getString("NameRecord");
+                nameFruitString = jsonObject.getString("Name");
+                imageString = jsonObject.getString("Image");
+                DetailString = jsonObject.getString("Detail");
+                nameString = jsonObject.getString("NameRecord");
 
 
                 TextView nameTextView = getView().findViewById(R.id.txtNamee);
-                nameTextView.setText(nameRecordString);
-
-                TextView namefruitTextView = getView().findViewById(R.id.txtNamee);
-                namefruitTextView.setText(namefruitString);
-
-                TextView detailTextView = getView().findViewById(R.id.txtProductlist);
-                detailTextView.setText(detailString);
+                nameTextView.setText(nameFruitString);
 
                 ImageView imageView = getView().findViewById(R.id.imvImage);
                 Picasso.get().load(imageString).into(imageView);
 
-//                TextView amountTextView = getView().findViewById(R.id.txtProductAmount);
-//                amountTextView.setText(amountString);
-//
-//                TextView unitTextView = getView().findViewById(R.id.txtProductUnit);
-//                unitTextView.setText(unitString);
+                TextView detailTextView = getView().findViewById(R.id.txtProductlist);
+                detailTextView.setText(DetailString);
 
-//                TextView dateTextView = getView().findViewById(R.id.txtProductdate);
-//                dateTextView.setText(dateString);
-
-
-
-
-
-
-
-
-
-
-
-
+                TextView nameRecordTextView = getView().findViewById(R.id.txtProductName);
+                nameRecordTextView.setText(nameString);
 
 
 
