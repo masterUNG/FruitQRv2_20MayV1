@@ -42,15 +42,23 @@ import com.journeyapps.barcodescanner.BarcodeEncoder;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Random;
 
+import it.sauronsoftware.ftp4j.FTPAbortedException;
 import it.sauronsoftware.ftp4j.FTPClient;
+import it.sauronsoftware.ftp4j.FTPDataTransferException;
 import it.sauronsoftware.ftp4j.FTPDataTransferListener;
+import it.sauronsoftware.ftp4j.FTPException;
+import it.sauronsoftware.ftp4j.FTPIllegalReplyException;
 
 
 /**
@@ -68,6 +76,9 @@ public class AddProductFragment extends Fragment {
     private EditText txtQRcode;
     private Button btnCreateQr;
     private ImageView imageeView;
+
+    private File file;
+    private Bitmap bitmap;
 
 
 
@@ -99,11 +110,19 @@ public class AddProductFragment extends Fragment {
 
                         try {
 
-
                             BitMatrix bitMatrix = multiFormatWriter.encode(text, BarcodeFormat.QR_CODE, 500, 500);
                             BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
-                            Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
+                            bitmap = barcodeEncoder.createBitmap(bitMatrix);
                             imageeView.setImageBitmap(bitmap);
+
+                            String[] strings = text.split("/");
+
+                            String nameImage = strings[0] + ".png";
+
+                            file = new File(getActivity().getCacheDir(), nameImage);
+
+
+
 
                         } catch (WriterException e) {
                             e.printStackTrace();
@@ -144,6 +163,34 @@ public class AddProductFragment extends Fragment {
 
 
     }// Main Method
+
+    public class MyUploadPicture implements FTPDataTransferListener{
+        @Override
+        public void started() {
+            Toast.makeText(getActivity(), "Start Upload", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void transferred(int i) {
+            Toast.makeText(getActivity(), "Continue Upload", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void completed() {
+            Toast.makeText(getActivity(), "Complete Upload", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void aborted() {
+
+        }
+
+        @Override
+        public void failed() {
+
+        }
+    }
+
 
 
 
@@ -404,6 +451,42 @@ public class AddProductFragment extends Fragment {
 
 
                 } //if
+
+
+//                Upload Image QRimage
+                FTPClient ftpClient = new FTPClient();
+                try {
+
+                    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                    bitmap.compress(Bitmap.CompressFormat.PNG, 0, byteArrayOutputStream);
+                    byte[] bytes = byteArrayOutputStream.toByteArray();
+
+                    FileOutputStream fileOutputStream = new FileOutputStream(file);
+                    fileOutputStream.write(bytes);
+                    fileOutputStream.flush();
+                    fileOutputStream.close();
+
+                    StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy
+                            .Builder().permitAll().build();
+                    StrictMode.setThreadPolicy(policy);
+
+
+                    ftpClient.connect("ftp.androidthai.in.th", 21);
+                    ftpClient.login("rmutk@androidthai.in.th", "Abc12345");
+                    ftpClient.setType(FTPClient.TYPE_BINARY);
+                    ftpClient.changeDirectory("QRimage");
+                    ftpClient.upload(file, new MyUploadPicture());
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    try {
+                        ftpClient.disconnect(true);
+                    } catch (Exception e1) {
+                        e1.printStackTrace();
+                    }
+                }
+
+
 
             }
         });
