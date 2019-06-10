@@ -79,6 +79,7 @@ public class AddProductFragment extends Fragment {
 
     private File file;
     private Bitmap bitmap;
+    private String imageQR;
 
 
 
@@ -118,6 +119,8 @@ public class AddProductFragment extends Fragment {
                             String[] strings = text.split("/");
 
                             String nameImage = strings[0] + ".png";
+
+                            imageQR = "https://www.androidthai.in.th/rmutk/QRimage/" + nameImage;
 
                             file = new File(getActivity().getCacheDir(), nameImage);
 
@@ -512,7 +515,7 @@ public class AddProductFragment extends Fragment {
             //อัพโหลด
             AddDetailProductThread addDetailProductThread = new AddDetailProductThread(getActivity());
             addDetailProductThread.execute(idRecord, NameRecord, TypeRecord, idTypeFruid, Name,
-                    Detail, Image, Amount, Unit, Date, QRcode, AmountPd, UnitPd, myconstant.getUrlAddDetailProduct());
+                    Detail, Image, Amount, Unit, Date, QRcode, AmountPd, UnitPd, imageQR, myconstant.getUrlAddDetailProduct());
             String result = addDetailProductThread.get();
 
             if (Boolean.parseBoolean(result)) {

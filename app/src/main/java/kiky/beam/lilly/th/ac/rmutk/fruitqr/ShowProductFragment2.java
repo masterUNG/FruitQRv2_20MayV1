@@ -41,7 +41,7 @@ public class ShowProductFragment2 extends Fragment {
     private Myconstant myconstant = new Myconstant(); //php
 
     private EditText txtQRcode;
-    private Button btnCreateQr;
+
     private ImageView imageeView;
 
     public ShowProductFragment2() {
@@ -62,40 +62,10 @@ public class ShowProductFragment2 extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         txtQRcode = getView().findViewById(R.id.txtQRcode);
-        btnCreateQr = getView().findViewById(R.id.btnCreateQr);
+
         imageeView = getView().findViewById(R.id.imageeView);
 
-        btnCreateQr.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                String text = txtQRcode.getText().toString().trim();
-
-
-                if(text != null){
-
-                    MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
-
-                    try {
-
-
-                        BitMatrix bitMatrix = multiFormatWriter.encode(text, BarcodeFormat.QR_CODE, 500, 500);
-                        BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
-                        Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
-                        imageeView.setImageBitmap(bitmap);
-
-                    } catch (WriterException e) {
-                        e.printStackTrace();
-                    }
-                }
-
-
-
-            }
-
-
-
-        });
 
         idProduct = getArguments().getString("idProduct");
         Log.d("27AprilV3", "Receive idProduct in Fragment ==> " + idProduct);
@@ -131,21 +101,7 @@ public class ShowProductFragment2 extends Fragment {
                 Log.d("18AprilV3", "productStringArrayList[" + i + "] ==> " + productStringArrayList.get(i));
             }
 
-//            Log.d("27ApriV4", "id Sent ==> " + productStringArrayList.get(4));
-
-////            สำหรับ Framer
-//            GetDataWhereOneColumn getDataWhereOneColumn1 = new GetDataWhereOneColumn(getActivity());
-//            getDataWhereOneColumn1.execute("id", productStringArrayList.get(4), myconstant.getUrlGetFramerWhereId()); //อยู่ในตำแหน่งที่ 4 idFramer
-//            String jsonFramer = getDataWhereOneColumn1.get();
-//            Log.d("27AprilV4", "jsonFramer ==>>> " + jsonFramer);
-//            String[] columnDetailFramer = myconstant.getColumnDetailFramer();
-//
-//            JSONArray jsonArray1 = new JSONArray(jsonFramer);
-//            JSONObject jsonObject1 = jsonArray1.getJSONObject(0);
-//            for (int i = 0; i < columnDetailFramer.length; i += 1) {
-//                framerStringArrayList.add(jsonObject1.getString(columnDetailFramer[i]));
-//                Log.d("18AprilV4", "framerStringArrayList[" + i + "] ==> " + framerStringArrayList.get(i));
-//            }
+            String urlImageQR = jsonObject.getString("ImageQR");
 
             Log.d("27ApriV4", "id Sent ==> " + productStringArrayList.get(4));
 
@@ -163,6 +119,9 @@ public class ShowProductFragment2 extends Fragment {
                 userStringArrayList.add(jsonObject2.getString(columnUser[i]));
                 Log.d("18AprilV5", "userStringArrayList[" + i + "] ==> " + userStringArrayList.get(i));
             }
+
+
+
 
 
 
@@ -204,50 +163,10 @@ public class ShowProductFragment2 extends Fragment {
             productunit2TextView.setText(productStringArrayList.get(13));
 
 
-            TextView qrTextView = getView().findViewById(R.id.txtQRcode);
-           qrTextView.setText(productStringArrayList.get(11));
-//          Address Product
-//            TextView productaddressTextView = getView().findViewById(R.id.txtProductAdd);
-//            productaddressTextView.setText(userStringArrayList.get(4));
+//            Show Image QRcoe
+            ImageView imageView1 = getView().findViewById(R.id.imvQRcode);
+            Picasso.get().load(urlImageQR).resize(250, 250).into(imageView1);
 
-//          Phone Product
-//            TextView productphoneTextView = getView().findViewById(R.id.txtProductPhone);
-//            productphoneTextView.setText(userStringArrayList.get(5));
-
-
-
-//            ShowView
-//            Name Fruit
-//            TextView fruitTextView = getView().findViewById(R.id.txtlog);
-//            fruitTextView.setText(framerStringArrayList.get(7));
-////
-////          name Fruit
-//            TextView fruittTextView = getView().findViewById(R.id.txtFruitt);
-//            fruittTextView.setText(framerStringArrayList.get(2));
-
-//          Amount Fruit
-//            TextView fruitamountTextView = getView().findViewById(R.id.txtFruitAmount);
-//            fruitamountTextView.setText(framerStringArrayList.get(3));
-//
-//          Unit Fruit
-//            TextView fruitunitTextView = getView().findViewById(R.id.txtFruitUnit);
-//            fruitunitTextView.setText(framerStringArrayList.get(4));
-
-//          Date Fruit
-//            TextView fruitdateTextView = getView().findViewById(R.id.txtFruitdate);
-//            fruitdateTextView.setText(framerStringArrayList.get(5));
-
-//          Name Fruit
-//            TextView fruitnameTextView = getView().findViewById(R.id.txtProductName);
-//            fruitnameTextView.setText(userStringArrayList.get(1));
-
-//          Address Fruit
-//            TextView fruitaddressTextView = getView().findViewById(R.id.txtProductAdd);
-//            fruitaddressTextView.setText(userStringArrayList.get(4));
-
-//          Phone Fruit
-//            TextView fruitphoneTextView = getView().findViewById(R.id.txtProductPhone);
-//            fruitphoneTextView.setText(userStringArrayList.get(5));
 
 
         } catch (Exception e) {

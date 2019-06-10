@@ -39,10 +39,10 @@ public class AddDetailProductThread extends AsyncTask<String, Void, String> {
                     .add("QRcode",strings[10])
                     .add("AmountPd",strings[11])
                     .add("UnitPd",strings[12])
-
+                    .add("ImageQR", strings[13])
                     .build();
             Request.Builder builder = new Request.Builder();
-            Request request = builder.url(strings[13]).post(requestBody).build();
+            Request request = builder.url(strings[14]).post(requestBody).build();
             Response response = okHttpClient.newCall(request).execute();
             return  response.body().string();
 

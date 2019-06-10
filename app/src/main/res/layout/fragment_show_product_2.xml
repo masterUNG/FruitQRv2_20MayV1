@@ -417,38 +417,13 @@
              />
 
             <ImageView
-                android:id="@+id/imageeView"
+                android:id="@+id/imvQRcode"
                 android:scaleType="centerInside"
                 android:layout_width="match_parent"
                 android:layout_height="200dp" />
 
 
-            <LinearLayout
-                android:layout_width="211dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp">
 
-                <EditText
-                    android:id="@+id/txtQRcode"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="product0001"
-                    android:textColor="#009688"
-                    android:textSize="24dp"
-                    android:textStyle="bold"
-                    app:fontFamily="@font/fonts1" />
-
-                <Button
-                    android:id="@+id/btnCreateQr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-                    android:text="QR code" />
-
-
-            </LinearLayout>
 
             <!--Line ทำเส้น-->
             <View
