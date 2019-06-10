@@ -208,7 +208,7 @@ public class AddFramerFragment extends Fragment {
                 //สำเร็จ
                 getActivity().getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.contentServiceFragment, new ShowListFramerFragment()).commit();
+                        .replace(R.id.contentServiceFragment, new ShowListCenterFragment()).commit();
 
             }else{
                 //ไม่สำเร็จ

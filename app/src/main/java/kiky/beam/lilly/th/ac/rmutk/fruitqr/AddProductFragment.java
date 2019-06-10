@@ -32,7 +32,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.encoder.QRCode;
+import com.journeyapps.barcodescanner.BarcodeEncoder;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -60,6 +65,12 @@ public class AddProductFragment extends Fragment {
     private Uri uri;
     private boolean picABoolean = true; // ถ้าเค้าไม่มีการเลือกรูปภาพจะไม่เออเร่อ
 
+    private EditText txtQRcode;
+    private Button btnCreateQr;
+    private ImageView imageeView;
+
+
+
     private String idDeleteDetailFarmerString;
 
 
@@ -70,6 +81,43 @@ public class AddProductFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        txtQRcode = getView().findViewById(R.id.txtQRcode);
+        btnCreateQr = getView().findViewById(R.id.btnCreateQr);
+        imageeView = getView().findViewById(R.id.imageeView);
+
+            btnCreateQr.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    String text = txtQRcode.getText().toString().trim();
+
+
+                    if(text != null){
+
+                        MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
+
+                        try {
+
+
+                            BitMatrix bitMatrix = multiFormatWriter.encode(text, BarcodeFormat.QR_CODE, 500, 500);
+                            BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
+                            Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
+                            imageeView.setImageBitmap(bitmap);
+
+                        } catch (WriterException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+
+
+                }
+
+
+
+            });
+
 
 //      Create RecyclerView
         createRecyclerView();
@@ -83,13 +131,24 @@ public class AddProductFragment extends Fragment {
 //      Unit Controller
         unitController();
 
+
+
 //      Add Product
         addProduct();
 
 //        Qr Controller
         qrController();
 
+//        buttonqr();
+
+
+
     }// Main Method
+
+
+
+
+
 
     private void qrController() { // Random
         TextView textView = getView().findViewById(R.id.txtQRcode);
@@ -101,6 +160,8 @@ public class AddProductFragment extends Fragment {
         QRcode = "ID" + findIdDetailProduct() + Date;
         textView.setText(QRcode);
     }
+
+
 
     private String findIdDetailProduct() {
 
@@ -302,6 +363,10 @@ public class AddProductFragment extends Fragment {
 
                     Image = "https://www.androidthai.in.th/rmutk/Picture" + nameImage;
 
+//                    String QRcodee = path.substring(path.lastIndexOf("/")); //หาชื่อรูปที่อยู่หลังเครื่องหมาย / Camera/20190411_135758.jpg
+//
+//                    QRcode = "https://www.androidthai.in.th/rmutk/Picture" + QRcode;
+
 
                     // ได้ข้อมูลแล้วว แต่ยังไม่ได้โยนขึ้นฐานข้อมูล
 
@@ -381,7 +446,7 @@ public class AddProductFragment extends Fragment {
         getActivity()
                 .getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.contentServiceFragment, new ShowListProductFragment())
+                .replace(R.id.contentServiceFragment, new ShowListProductFragment2())
                 .commit();
 
     }

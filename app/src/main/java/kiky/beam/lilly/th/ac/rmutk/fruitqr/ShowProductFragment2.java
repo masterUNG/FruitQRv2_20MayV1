@@ -1,6 +1,7 @@
 package kiky.beam.lilly.th.ac.rmutk.fruitqr;
 
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,9 +10,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import com.journeyapps.barcodescanner.BarcodeEncoder;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -32,6 +40,9 @@ public class ShowProductFragment2 extends Fragment {
     private ArrayList<String> productStringArrayList, framerStringArrayList, userStringArrayList, userFramerStringArrayList;
     private Myconstant myconstant = new Myconstant(); //php
 
+    private EditText txtQRcode;
+    private Button btnCreateQr;
+    private ImageView imageeView;
 
     public ShowProductFragment2() {
         // Required empty public constructor
@@ -49,6 +60,42 @@ public class ShowProductFragment2 extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        txtQRcode = getView().findViewById(R.id.txtQRcode);
+        btnCreateQr = getView().findViewById(R.id.btnCreateQr);
+        imageeView = getView().findViewById(R.id.imageeView);
+
+        btnCreateQr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String text = txtQRcode.getText().toString().trim();
+
+
+                if(text != null){
+
+                    MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
+
+                    try {
+
+
+                        BitMatrix bitMatrix = multiFormatWriter.encode(text, BarcodeFormat.QR_CODE, 500, 500);
+                        BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
+                        Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
+                        imageeView.setImageBitmap(bitmap);
+
+                    } catch (WriterException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+
+
+            }
+
+
+
+        });
 
         idProduct = getArguments().getString("idProduct");
         Log.d("27AprilV3", "Receive idProduct in Fragment ==> " + idProduct);
