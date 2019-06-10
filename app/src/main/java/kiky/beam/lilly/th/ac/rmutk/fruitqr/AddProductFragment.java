@@ -11,6 +11,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
@@ -80,6 +81,7 @@ public class AddProductFragment extends Fragment {
     private File file;
     private Bitmap bitmap;
     private String imageQR;
+    private String nameImage;
 
 
 
@@ -118,7 +120,7 @@ public class AddProductFragment extends Fragment {
 
                             String[] strings = text.split("/");
 
-                            String nameImage = strings[0] + ".png";
+                            nameImage = strings[0] + "_" + strings[1] + "_" + strings[2] + ".png";
 
                             imageQR = "https://www.androidthai.in.th/rmutk/QRimage/" + nameImage;
 
@@ -175,7 +177,7 @@ public class AddProductFragment extends Fragment {
 
         @Override
         public void transferred(int i) {
-            Toast.makeText(getActivity(), "Continue Upload", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getActivity(), "Continue Upload", Toast.LENGTH_SHORT).show();
         }
 
         @Override
@@ -209,6 +211,7 @@ public class AddProductFragment extends Fragment {
         //เรียง id + date
         QRcode = "ID" + findIdDetailProduct() + Date;
         textView.setText(QRcode);
+        txtQRcode.setText(QRcode);
     }
 
 
@@ -298,6 +301,8 @@ public class AddProductFragment extends Fragment {
                         calendar1.set(year, month, dayOfMonth);
                         Date = dateFormat.format(calendar1.getTime());
                         textView.setText(Date);
+                        qrController();
+
 
                     }
                 }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
@@ -456,7 +461,7 @@ public class AddProductFragment extends Fragment {
                 } //if
 
 
-//                Upload Image QRimage
+//                Upload Image QRimage To Server
                 FTPClient ftpClient = new FTPClient();
                 try {
 
@@ -489,9 +494,33 @@ public class AddProductFragment extends Fragment {
                     }
                 }
 
+//                Save ImageQR to SD card
 
 
-            }
+                String root = Environment.getExternalStorageDirectory().toString();
+                File myDirectory = new File(root + "/sdcard/qr_images");
+                myDirectory.mkdirs();
+
+                File file = new File(myDirectory, nameImage);
+
+                try {
+
+                    FileOutputStream fileOutputStream = new FileOutputStream(file);
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 90, fileOutputStream);
+                    fileOutputStream.flush();
+                    fileOutputStream.close();
+
+
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+
+
+
+
+            }   // onClick
         });
 
 
@@ -546,7 +575,7 @@ public class AddProductFragment extends Fragment {
 
         @Override
         public void transferred(int i) {
-            Toast.makeText(getActivity(), "Continue Uplaod", Toast.LENGTH_SHORT).show(); //กำลังอัพโหลด
+//            Toast.makeText(getActivity(), "Continue Uplaod", Toast.LENGTH_SHORT).show(); //กำลังอัพโหลด
         }
 
         @Override

@@ -41,6 +41,7 @@ public class AddFramerFragment extends Fragment {
     private TextView dateTextView,date2TextView;
     private boolean nameFruitABoolean = true;
     private boolean FarmerABoolean = true;
+    private String[] strings;
 
     public AddFramerFragment() {
         // Required empty public constructor
@@ -80,7 +81,9 @@ public class AddFramerFragment extends Fragment {
                 getActivity()
                         .getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.contentServiceFragment, new TypeFruitFragment()).commit();
+                        .replace(R.id.contentServiceFragment, new TypeFruitFragment())
+                        .addToBackStack(null)
+                        .commit();
             }
         });
     }
@@ -328,10 +331,42 @@ public class AddFramerFragment extends Fragment {
 
     private void createNameFruit() {
 
-        final String[] strings = myconstant.getFavoriteFruits();
+        try {
 
+            GetAllDataThread getAllDataThread = new GetAllDataThread(getActivity());
+            Myconstant myconstant = new Myconstant();
+            getAllDataThread.execute(myconstant.getUrlGetTypeFruit());
+
+            String result = getAllDataThread.get();
+//            Log.d("10JuneV1", result);
+            JSONArray jsonArray = new JSONArray(result);
+            strings = new String[jsonArray.length()];
+
+            for (int i = 0; i < jsonArray.length(); i += 1) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                strings[i] = jsonObject.getString("NameFruit");
+//                Log.d("10JuneV1", strings[i]);
+            }
+
+
+
+            createSpinner();
+
+
+        } catch (Exception e) {
+            Log.d("10JuneV1", "e ==> " + e.toString());
+        }
+
+
+//        final String[] strings = myconstant.getFavoriteFruits();
+
+
+    }
+
+    private void createSpinner() {
+        Log.d("10JuneV1", "strings ==> " + strings.toString());
         Spinner spinner = getView().findViewById(R.id.spinnerFruit);
-        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, myconstant.getFavoriteFruits());
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, strings);
         spinner.setAdapter(stringArrayAdapter);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -350,6 +385,11 @@ public class AddFramerFragment extends Fragment {
     }
 
     private void createNameFarmer() {
+
+
+
+
+
         final String[] strings = myconstant.getFarmer();
 
         Spinner spinner = getView().findViewById(R.id.spinnername);

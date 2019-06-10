@@ -122,20 +122,26 @@ public class TypeFruitFragment extends Fragment {
 
             AddNameFruitThread addNameFruitThread = new AddNameFruitThread(getActivity());
             addNameFruitThread.execute(nameString, unitString, myconstant.getUrlAddNameFruit());
-            if (Boolean.parseBoolean(addNameFruitThread.get())){
-                //สำเร็จ
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.contentServiceFragment, new AddFramerFragment()).commit();
+            String result = addNameFruitThread.get();
+            Log.d("10JuneV1", "result ==> " + result);
 
-            }else{
-//                //ไม่สำเร็จ
-//                Toast.makeText(getActivity(), "บันทึกข้อมูลผลผลิตไม่สำเร็จ กรุณากรอกข้อมูลผลผลิตใหม่อีกครั้ง", Toast.LENGTH_SHORT).show();
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.contentServiceFragment, new AddFramerFragment()).commit();
+            getActivity().getSupportFragmentManager().popBackStack();
 
-            }
+//
+//            if (Boolean.parseBoolean(addNameFruitThread.get())){
+//                //สำเร็จ
+//                getActivity().getSupportFragmentManager()
+//                        .beginTransaction()
+//                        .replace(R.id.contentServiceFragment, new AddFramerFragment()).commit();
+//
+//            }else{
+////                //ไม่สำเร็จ
+////                Toast.makeText(getActivity(), "บันทึกข้อมูลผลผลิตไม่สำเร็จ กรุณากรอกข้อมูลผลผลิตใหม่อีกครั้ง", Toast.LENGTH_SHORT).show();
+//                getActivity().getSupportFragmentManager()
+//                        .beginTransaction()
+//                        .replace(R.id.contentServiceFragment, new AddFramerFragment()).commit();
+//
+//            }
 
         } catch (Exception e) {
             e.printStackTrace();
